@@ -1,0 +1,407 @@
+.carouselContainer {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #fdfaf6;
+  color: #1c1917;
+  font-family: var(--font-display, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+.topBar {
+  position: absolute;
+  top: 1.5rem;
+  left: clamp(1rem, 3vw, 2.5rem);
+  right: clamp(1rem, 3vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 30;
+}
+
+.backIntroBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1c1917;
+  border: 1px solid rgba(28, 25, 23, 0.12);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.backIntroBtn:hover {
+  background: #1c1917;
+  color: #fdfaf6;
+  border-color: #1c1917;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.brandWatermark {
+  margin-left: auto;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #78716c;
+}
+
+.mainStage {
+  width: 100%;
+  max-width: 1400px;
+  padding: 4.5rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.headerBar {
+  width: 100%;
+  max-width: 900px;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.sectionTitle {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #78716c;
+}
+
+.slideCounter {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #78716c;
+}
+
+.slideCounterCurrent {
+  font-weight: 700;
+  color: #1c1917;
+}
+
+.instructionHint {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #57534e;
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(28, 25, 23, 0.08);
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hintPulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3b82f6;
+  box-shadow: 0 0 8px #3b82f6;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* ── 3D Stage & Swiper ── */
+.swiperStage {
+  perspective: 1200px;
+  width: 100%;
+  padding: 1.5rem 0 2rem;
+  overflow: visible;
+}
+
+.slideItem {
+  width: clamp(300px, 62vw, 720px);
+  aspect-ratio: 3 / 2;
+  border-radius: 22px;
+  overflow: hidden;
+  background-color: #ece7df;
+  box-shadow: 0 22px 48px -14px rgba(28, 25, 23, 0.16),
+              0 4px 14px -2px rgba(28, 25, 23, 0.06);
+  opacity: 0.55;
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+.slideActive {
+  opacity: 1 !important;
+  box-shadow: 0 32px 64px -16px rgba(28, 25, 23, 0.28),
+              0 8px 24px -4px rgba(28, 25, 23, 0.12);
+}
+
+.slideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  transition: transform 0.6s ease;
+}
+
+.slideItem:hover .slideImage {
+  transform: scale(1.02);
+}
+
+/* ── Title Badge ── */
+.titleBadge {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  background: rgba(253, 250, 246, 0.92);
+  backdrop-filter: blur(12px);
+  color: #1c1917;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 5;
+}
+
+/* ── Status Badges (Active vs Future Development) ── */
+.activeBadge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(16, 185, 129, 0.95);
+  color: #ffffff;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  z-index: 5;
+  animation: glowPulse 2.5s infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 4px 18px rgba(16, 185, 129, 0.4); }
+  50% { box-shadow: 0 4px 28px rgba(16, 185, 129, 0.7); }
+}
+
+.futureBadge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(28, 25, 23, 0.85);
+  backdrop-filter: blur(8px);
+  color: #fdfaf6;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0.45rem 0.95rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  z-index: 5;
+}
+
+/* ── Holographic C Icon Interactive Hotspot ── */
+.cIconHotspot {
+  position: absolute;
+  top: 48%;
+  left: 61%;
+  transform: translate(-50%, -50%);
+  width: clamp(110px, 22vw, 190px);
+  height: clamp(110px, 22vw, 190px);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cIconHotspot:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.cIconBeacon {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px dashed rgba(56, 189, 248, 0.85);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.45), inset 0 0 20px rgba(56, 189, 248, 0.25);
+  animation: rotateBeacon 12s linear infinite;
+}
+
+@keyframes rotateBeacon {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cIconTooltip {
+  position: absolute;
+  bottom: -2.2rem;
+  white-space: nowrap;
+  background: rgba(15, 23, 42, 0.92);
+  color: #ffffff;
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  animation: bounceHint 2s infinite ease-in-out;
+}
+
+@keyframes bounceHint {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* ── Navigation Controls ── */
+.navRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+  z-index: 20;
+}
+
+.navArrowBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(28, 25, 23, 0.12);
+  background: #ffffff;
+  color: #1c1917;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+}
+
+.navArrowBtn:hover {
+  background: #1c1917;
+  color: #fdfaf6;
+  border-color: #1c1917;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.navArrowBtn:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.dotsWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+.dotBtn {
+  height: 8px;
+  border-radius: 9999px;
+  border: none;
+  background: rgba(28, 25, 23, 0.2);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.dotBtn:hover {
+  background: rgba(28, 25, 23, 0.45);
+}
+
+.dotActive {
+  width: 28px !important;
+  background: #1c1917 !important;
+}
+
+.dotInactive {
+  width: 8px;
+}
+
+/* ── Toast Notification for Future Development ── */
+.toastNotice {
+  position: fixed;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(24, 24, 27, 0.95);
+  backdrop-filter: blur(14px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.75rem 1.6rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 50;
+  animation: toastSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toastSlideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.toastCloseBtn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.toastCloseBtn:hover {
+  color: #ffffff;
+}

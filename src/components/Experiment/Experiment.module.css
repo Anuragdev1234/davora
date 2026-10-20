@@ -1,0 +1,554 @@
+.section {
+  position: relative;
+  width: 100%;
+  padding: var(--space-section) 0;
+  background-color: var(--color-bg);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width-lg);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.header {
+  margin-bottom: var(--space-10);
+  text-align: left;
+}
+
+.sectionLabel {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.description {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 680px;
+  margin: 0;
+}
+
+/* ── Editor Container Panel ── */
+.editorPanel {
+  background-color: var(--color-dark-bg);
+  border: 1px solid var(--color-dark-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Panel Header / Toolbar ── */
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-5);
+  background-color: #121412;
+  border-bottom: 1px solid var(--color-dark-border);
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.leftControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.windowDots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dotClose { background-color: #ff5f56; opacity: 0.85; }
+.dotMin { background-color: #ffbd2e; opacity: 0.85; }
+.dotMax { background-color: #27c93f; opacity: 0.85; }
+
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  background-color: var(--color-dark-surface);
+  color: var(--color-dark-text);
+  border: 1px solid var(--color-dark-border);
+  border-radius: var(--radius-sm);
+}
+
+.tabBadge {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+.rightControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.resetBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-dark-muted);
+  background-color: transparent;
+  border: 1px solid var(--color-dark-border);
+  border-radius: var(--radius-full);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.resetBtn:hover:not(:disabled) {
+  color: var(--color-dark-text);
+  border-color: #4b4e48;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.resetBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.runBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-5);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  color: #121412;
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(197, 233, 123, 0.25);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.runBtn:hover:not(:disabled) {
+  background-color: var(--color-accent-dark);
+  box-shadow: 0 0 18px rgba(197, 233, 123, 0.45);
+  transform: translateY(-1px);
+}
+
+.runBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.runBtn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.spinner {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── Editor Code Area ── */
+.editorBody {
+  padding: var(--space-6) var(--space-5);
+  background-color: var(--color-dark-bg);
+  overflow-x: auto;
+}
+
+.codeTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+}
+
+.lineRow {
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.lineRow:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.lineNum {
+  width: 44px;
+  min-width: 44px;
+  color: #555850;
+  text-align: right;
+  padding-right: var(--space-4);
+  user-select: none;
+  font-size: var(--text-xs);
+  vertical-align: top;
+}
+
+.lineContent {
+  color: var(--color-dark-text);
+  white-space: pre;
+  tab-size: 4;
+}
+
+/* Syntax Token Classes */
+.tokPreprocessor {
+  color: #7ec8e3;
+}
+
+.tokKeyword {
+  color: #93b5e1;
+  font-weight: 500;
+}
+
+.tokFunction {
+  color: #f5f5f1;
+}
+
+.tokString {
+  color: var(--color-accent);
+}
+
+.tokNumber {
+  color: #f5b971;
+}
+
+.tokPunctuation {
+  color: #888b84;
+}
+
+.tokComment {
+  color: #6c7069;
+  font-style: italic;
+}
+
+/* ── Output Terminal Area ── */
+.outputSection {
+  border-top: 1px solid var(--color-dark-border);
+  background-color: #0d0f0d;
+}
+
+.outputBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-5);
+  background-color: #121412;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  user-select: none;
+}
+
+.outputBarTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-dark-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+.outputStatusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.statusSuccess {
+  background-color: rgba(197, 233, 123, 0.15);
+  color: var(--color-accent);
+}
+
+.statusRunning {
+  background-color: rgba(147, 181, 225, 0.15);
+  color: #93b5e1;
+}
+
+.statusIdle {
+  color: var(--color-dark-muted);
+}
+
+.toggleIcon {
+  color: var(--color-dark-muted);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.outputContent {
+  padding: var(--space-4) var(--space-5);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: #e2e3de;
+  overflow-x: auto;
+}
+
+.terminalLog {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.terminalCmd {
+  color: var(--color-dark-muted);
+  font-size: var(--text-xs);
+  margin-bottom: var(--space-2);
+}
+
+.terminalStdout {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: var(--text-base);
+  margin-bottom: var(--space-3);
+  padding: var(--space-1) 0;
+}
+
+.terminalExit {
+  color: #6c7069;
+  font-size: var(--text-xs);
+}
+
+.simNotice {
+  padding: var(--space-3) var(--space-5);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-dark-muted);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.simBadge {
+  color: #6c7069;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .heading {
+    font-size: var(--text-3xl);
+  }
+
+  .panelHeader {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .rightControls {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .editorBody {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .lineNum {
+    width: 32px;
+    min-width: 32px;
+    padding-right: var(--space-2);
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: var(--text-2xl);
+  }
+
+  .description {
+    font-size: var(--text-base);
+  }
+
+  .codeTable {
+    font-size: 12px;
+  }
+}
+
+/* ── Interactive Editable String Line ── */
+.interactiveLineRow {
+  background-color: rgba(197, 233, 123, 0.04);
+}
+
+.interactiveLineRow:hover {
+  background-color: rgba(197, 233, 123, 0.07);
+}
+
+.inputWrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  vertical-align: baseline;
+  margin: 0 1px;
+}
+
+.stringInput {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  background: rgba(197, 233, 123, 0.07);
+  border: 1px dashed rgba(197, 233, 123, 0.45);
+  border-radius: 4px;
+  padding: 1px 6px;
+  outline: none;
+  min-width: 140px;
+  max-width: 580px;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 8px rgba(197, 233, 123, 0.12);
+  caret-color: var(--color-accent);
+}
+
+.stringInput:hover {
+  background: rgba(197, 233, 123, 0.12);
+  border-color: rgba(197, 233, 123, 0.7);
+  box-shadow: 0 0 12px rgba(197, 233, 123, 0.25);
+}
+
+.stringInput:focus {
+  background: rgba(197, 233, 123, 0.16);
+  border-color: var(--color-accent);
+  border-style: solid;
+  box-shadow: 0 0 16px rgba(197, 233, 123, 0.35);
+}
+
+.stringInput::placeholder {
+  color: rgba(197, 233, 123, 0.4);
+  font-style: italic;
+}
+
+.editHintBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 8px;
+  padding: 1px 7px;
+  border-radius: 9999px;
+  background: rgba(197, 233, 123, 0.1);
+  border: 1px solid rgba(197, 233, 123, 0.25);
+  color: var(--color-accent);
+  font-size: 10px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
+  user-select: none;
+  vertical-align: middle;
+  animation: gentlePulse 3s infinite ease-in-out;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.97); }
+}
+
+/* ── Mode Toggle Controls in Header ── */
+.modeToggle {
+  display: inline-flex;
+  align-items: center;
+  background: #171917;
+  border: 1px solid var(--color-dark-border);
+  border-radius: var(--radius-full);
+  padding: 2px;
+  gap: 2px;
+}
+
+.modeBtn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-dark-muted);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modeBtnActive {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f5f5f1;
+}
+
+/* ── Full Raw Code Editor Area ── */
+.rawEditorWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.rawEditorTextarea {
+  width: 100%;
+  min-height: 180px;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: #f5f5f1;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: vertical;
+  padding: var(--space-4) var(--space-5);
+  caret-color: var(--color-accent);
+  tab-size: 4;
+}
+
+/* ── Terminal Output Error ── */
+.terminalStderr {
+  color: #f87171;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  padding: var(--space-1) 0;
+  white-space: pre-wrap;
+}
+
+.statusError {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}

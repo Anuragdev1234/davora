@@ -1,0 +1,267 @@
+/* =========================================================================
+   DEVORA — Function Deep Curriculum (Sections 07, 08, 09, 10, 11, 12)
+   ========================================================================= */
+
+.sectionWrapper {
+  position: relative;
+  width: 100%;
+  background: #f6f5f1;
+  padding: 4.5rem 0 4rem;
+  scroll-margin-top: 85px;
+}
+
+.container {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Header */
+.sectionHeader {
+  margin-bottom: 2rem;
+}
+
+.indexBadge {
+  display: inline-block;
+  padding: 3px 8px;
+  background: #e2e8f0;
+  color: #1e293b;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #141614;
+  margin: 0 0 0.5rem 0;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── 07 / TERMINOLOGY ── */
+.termCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.termGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.termCodeBox {
+  background: #141614;
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #e2e8f0;
+}
+
+.termItemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.termItemRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.termName {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.termValue {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.08);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* ── 08 / TYPES OF FUNCTIONS ── */
+.tableCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  overflow-x: auto;
+}
+
+.libTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  text-align: left;
+}
+
+.libTable th {
+  padding: 12px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+  border-bottom: 2px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.libTable td {
+  padding: 14px 16px;
+  font-size: 0.86rem;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.libName {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.libHeader {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #059669;
+  background: rgba(5, 150, 105, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ── 09 / 4 USER DEFINED TYPES ── */
+.userTypesTabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.userTypeTabBtn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.userTypeTabBtnActive {
+  background: #141614;
+  color: #ffffff;
+  border-color: #141614;
+}
+
+.userTypeContentCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* ── 10 / PARAMETERS AND ARGUMENTS ── */
+.paramArgGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.paramCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* ── 11 / CALL BY VALUE VS POINTERS ── */
+.callByValueGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.callByCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.memoryTraceBox {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-top: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+/* ── 12 / RETURN STATEMENT ── */
+.returnCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================================ */
+@media (max-width: 1024px) {
+  .termGrid,
+  .userTypeContentCard,
+  .paramArgGrid,
+  .callByValueGrid,
+  .returnCard {
+    grid-template-columns: 1fr;
+  }
+}

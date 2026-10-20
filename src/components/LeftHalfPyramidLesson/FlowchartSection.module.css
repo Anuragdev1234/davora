@@ -1,0 +1,251 @@
+.section {
+  padding: 5rem 2rem;
+  background-color: var(--color-bg, #fcfcfc);
+  border-bottom: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.06));
+  scroll-margin-top: 5.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  margin-bottom: 3rem;
+}
+
+.sectionNumber {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-blue, #2563eb);
+  margin-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif, "Newsreader", Georgia, serif);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 400;
+  color: var(--color-text-primary, #111111);
+  margin-bottom: 0.75rem;
+}
+
+.sectionDesc {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #555555);
+  max-width: 720px;
+}
+
+/* Controls Bar */
+.controlsBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.controlsLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.controlBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  background: #f4f4f5;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #27272a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.controlBtn:hover:not(:disabled) {
+  background: #18181b;
+  color: #ffffff;
+  border-color: #18181b;
+}
+
+.controlBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.nodeTracker {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #52525b;
+}
+
+/* Two-column Flowchart Viewport + Node Explainer */
+.flowchartGrid {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.svgViewport {
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.08));
+  border-radius: var(--radius-lg, 12px);
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.flowchartSvg {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  user-select: none;
+}
+
+.nodeGroup {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nodeGroup:hover {
+  filter: drop-shadow(0 2px 8px rgba(37, 99, 235, 0.2));
+}
+
+/* Right Explainer Box */
+.explainerCard {
+  background: #171917;
+  color: #ffffff;
+  border-radius: var(--radius-lg, 12px);
+  padding: 2.25rem 2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  position: sticky;
+  top: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.explainerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.explainerTitle {
+  font-family: var(--font-serif, "Newsreader", Georgia, serif);
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+.explainerBadge {
+  font-size: 0.75rem;
+  font-family: var(--font-mono, monospace);
+  background: rgba(37, 99, 235, 0.25);
+  color: #93c5fd;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(37, 99, 235, 0.4);
+}
+
+.explainerBody {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.branchTargets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: #111211;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.branchItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+}
+
+.branchTagTrue {
+  font-weight: 700;
+  color: #4ade80;
+  font-family: var(--font-mono, monospace);
+  flex-shrink: 0;
+}
+
+.branchTagFalse {
+  font-weight: 700;
+  color: #f87171;
+  font-family: var(--font-mono, monospace);
+  flex-shrink: 0;
+}
+
+.branchDesc {
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+.shapeLegend {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.shapeLegendTitle {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.shapeLegendGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+@media (max-width: 992px) {
+  .flowchartGrid {
+    grid-template-columns: 1fr;
+  }
+  .explainerCard {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 3.5rem 1.25rem;
+  }
+  .svgViewport {
+    padding: 1rem;
+  }
+  .explainerCard {
+    padding: 1.5rem;
+  }
+}

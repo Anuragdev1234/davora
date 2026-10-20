@@ -1,0 +1,438 @@
+/* =========================================================================
+   DEVORA — Program Detail Page Styles
+   ========================================================================= */
+
+.pageWrapper {
+  min-height: 100vh;
+  background-color: #f7f6f2;
+  color: #18181b;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  flex: 1;
+  padding-top: 80px; /* nav clearance */
+  padding-bottom: 5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── BREADCRUMB & BACK ACTION ── */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+  padding-top: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #71717a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  flex-wrap: wrap;
+}
+
+.breadcrumbLink {
+  color: #71717a;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  transition: color 0.15s ease;
+}
+
+.breadcrumbLink:hover {
+  color: #18181b;
+}
+
+.breadcrumbSep {
+  color: #cbd5e1;
+}
+
+.breadcrumbCurrent {
+  color: #18181b;
+  font-weight: 700;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #3f3f46;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backBtn:hover {
+  background: #f4f4f5;
+  color: #18181b;
+  border-color: #d4d4d8;
+}
+
+/* ── HEADER CARD ── */
+.headerCard {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.catBadge {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #dbeafe;
+  padding: 3px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.diffBadge {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+.diffBeginner {
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+.diffIntermediate {
+  background: #fefce8;
+  color: #ca8a04;
+  border: 1px solid #fef08a;
+}
+
+.diffAdvanced {
+  background: #fdf2f8;
+  color: #db2777;
+  border: 1px solid #fbcfe8;
+}
+
+.indexPill {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  color: #71717a;
+  background: #f4f4f5;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+.programTitle {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #141614;
+  margin: 0 0 0.85rem 0;
+}
+
+.programDesc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #52525b;
+  margin: 0;
+  max-width: 850px;
+}
+
+/* ── WORKSPACE GRID (CODE + OUTPUT) ── */
+.workspaceGrid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+/* Code Editor Panel */
+.codeCard {
+  background: #141614;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.editorHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: #1a1c1a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fileLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  color: #a1a1aa;
+}
+
+.fileDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2563eb;
+}
+
+.copyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  color: #e4e4e7;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copyBtn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.codeArea {
+  padding: 1.25rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #f4f4f5;
+  margin: 0;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* Right Column: Output & Explanation Stack */
+.rightStack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* Output Terminal */
+.outputCard {
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.terminalHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.65rem 1.15rem;
+  background: #202024;
+  border-bottom: 1px solid #27272a;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #71717a;
+  text-transform: uppercase;
+}
+
+.terminalDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.terminalBody {
+  padding: 1.15rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #a1a1aa;
+  margin: 0;
+  white-space: pre-wrap;
+  background-color: #121214;
+}
+
+/* Explanation Card */
+.explanationCard {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.expSectionTitle {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #18181b;
+  margin: 0 0 0.85rem 0;
+}
+
+.expParagraph {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #52525b;
+  margin-bottom: 1.25rem;
+}
+
+.algoList {
+  margin: 0 0 1.25rem 0;
+  padding-left: 1.2rem;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: #52525b;
+}
+
+.algoList li {
+  margin-bottom: 0.35rem;
+}
+
+.tagsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 1rem;
+}
+
+.tagPill {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 500;
+  background: #f4f4f5;
+  color: #52525b;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.complexityRow {
+  margin-top: 1.25rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid #f1f5f9;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #71717a;
+}
+
+/* ── BOTTOM ADJACENT NAVIGATION ── */
+.bottomNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  border-top: 1px solid #e4e4e7;
+  margin-top: 2rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.navPrevNextBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 10px;
+  color: #18181b;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.navPrevNextBtn:hover {
+  background: #f4f4f5;
+  border-color: #d4d4d8;
+  color: #2563eb;
+}
+
+.navBtnLabel {
+  font-size: 0.7rem;
+  font-family: var(--font-mono, monospace);
+  text-transform: uppercase;
+  color: #71717a;
+  display: block;
+}
+
+.navBtnTitle {
+  font-size: 0.84rem;
+  font-weight: 700;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .workspaceGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .headerCard {
+    padding: 1.25rem;
+  }
+
+  .programTitle {
+    font-size: 1.6rem;
+  }
+
+  .bottomNav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navPrevNextBtn {
+    justify-content: center;
+  }
+}

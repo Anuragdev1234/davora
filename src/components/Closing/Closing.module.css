@@ -1,0 +1,229 @@
+.section {
+  position: relative;
+  width: 100%;
+  padding-top: calc(var(--space-section) * 1.3);
+  padding-bottom: var(--space-12);
+  background-color: var(--color-bg);
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.contentWrapper {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionLabel {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+  margin: 0 0 var(--space-5) 0;
+}
+
+.supportingText {
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 2vw, 1.35rem);
+  font-weight: 400;
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--tracking-wide);
+  margin: 0 0 var(--space-10) 0;
+}
+
+/* ── Progress Indicator ── */
+.indicatorWrapper {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto var(--space-12) auto;
+  padding: 0 var(--space-4);
+}
+
+.progressSvg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+/* ── CTA Container ── */
+.ctaContainer {
+  margin-bottom: calc(var(--space-section) * 1.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-8);
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 20px rgba(197, 233, 123, 0.35);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  user-select: none;
+}
+
+.ctaBtn:hover {
+  background-color: var(--color-accent-dark);
+  box-shadow: 0 6px 28px rgba(197, 233, 123, 0.5);
+  transform: translateY(-2px);
+}
+
+.ctaBtn:active {
+  transform: translateY(0);
+}
+
+.ctaBtn:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 3px;
+}
+
+.arrowIcon {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.ctaBtn:hover .arrowIcon {
+  transform: translateX(4px);
+}
+
+.ctaSub {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* ── Footer ── */
+.footerDivider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border-light);
+  margin-bottom: var(--space-8);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: var(--space-4);
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.footerLeft,
+.footerRight {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.brandDot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-accent-dark);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.copyright {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.footerRight {
+  text-align: right;
+  align-items: flex-end;
+}
+
+/* ── Responsive Queries ── */
+@media (max-width: 768px) {
+  .section {
+    padding-top: var(--space-section);
+  }
+
+  .heading {
+    font-size: 2.25rem;
+  }
+
+  .supportingText {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-8);
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-6);
+  }
+
+  .footerRight {
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .ctaBtn {
+    width: 100%;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+  }
+}

@@ -1,0 +1,17 @@
+/* ============================================================
+   DEVORA — INTRODUCTION TO C LESSON PAGE
+   Editorial spacing, subtle hairline section dividers
+   ============================================================ */
+
+.sectionDivider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-border-light) 15%,
+    var(--color-border-light) 85%,
+    transparent 100%
+  );
+  margin: 3.5rem 0;
+  border: none;
+}

@@ -1,0 +1,242 @@
+/* =========================================================================
+   DEVORA — Quiz & Programming Practice Section Styles (09 & 10)
+   ========================================================================= */
+
+.sectionWrapper {
+  padding: 4.5rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+  scroll-margin-top: 85px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  margin-bottom: 2rem;
+}
+
+.indexBadge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 3px 9px;
+  border-radius: 6px;
+  margin-bottom: 0.65rem;
+}
+
+.sectionTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.65rem 0;
+}
+
+.sectionSubtitle {
+  font-size: 1.02rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 820px;
+}
+
+/* Quiz Container */
+.quizCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 3.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+}
+
+.quizQuestionBlock {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.questionTitle {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 1rem 0;
+}
+
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.optionLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  font-size: 0.84rem;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.optionLabel:hover {
+  background: #f1f5f9;
+}
+
+.optionSelected {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.optionCorrect {
+  border-color: #10b981;
+  background: #ecfdf5;
+  color: #047857;
+  font-weight: 700;
+}
+
+.optionIncorrect {
+  border-color: #ef4444;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.explanationBox {
+  margin-top: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.45;
+}
+
+.quizActionsBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Challenges Grid */
+.challengesGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.challengeCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.tierBadge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.tierBeginner {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.tierIntermediate {
+  background: #fffbeb;
+  color: #d97706;
+}
+
+.tierAdvanced {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.challengeTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0.5rem 0 0.65rem 0;
+}
+
+.challengeProblem {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0 0 1rem 0;
+}
+
+.ioBlock {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hintsSolutionsBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.actionToggleBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionToggleBtn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.solutionPanel {
+  background: #141614;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  margin-top: 1rem;
+}

@@ -1,0 +1,481 @@
+/* =========================================================================
+   DEVORA — Function Basics (Sections 01, 02, 03, 04, 05)
+   ========================================================================= */
+
+.sectionWrapper {
+  position: relative;
+  width: 100%;
+  background: #f6f5f1;
+  padding: 3.5rem 0 4rem;
+  scroll-margin-top: 85px;
+}
+
+.container {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* Common Section Header */
+.sectionHeader {
+  margin-bottom: 1.75rem;
+}
+
+.indexBadge {
+  display: inline-block;
+  padding: 3px 8px;
+  background: #e2e8f0;
+  color: #1e293b;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #141614;
+  margin: 0 0 0.5rem 0;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── 01 / WHAT IS A FUNCTION? ── */
+.whatIsGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.whatIsCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.codeBoxLight {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #1e293b;
+  margin-top: 1.5rem;
+}
+
+.benefitsCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.benefitsList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.benefitDetailItem {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.benefitDetailIcon {
+  color: #2563eb;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.benefitDetailTitle {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #141614;
+  margin: 0 0 2px 0;
+}
+
+.benefitDetailDesc {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ── 02 / HOW DOES A FUNCTION WORK? ── */
+.howCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.stagesFlow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.stageBlock {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.stageBlockActive {
+  background: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+  transform: translateY(-2px);
+}
+
+.stageNumberBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.stageTitle {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #141614;
+  margin: 0 0 4px 0;
+}
+
+.stageTagline {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: #64748b;
+  margin: 0 0 10px 0;
+}
+
+.stageCode {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: #1e293b;
+  white-space: pre-wrap;
+}
+
+.stageArrow {
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.noteCallout {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f1f5f9;
+  border-left: 3px solid #2563eb;
+  border-radius: 0 12px 12px 0;
+  padding: 1rem 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.noteIcon {
+  color: #2563eb;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.noteText {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #334155;
+  margin: 0;
+}
+
+/* ── 03 / FUNCTION SYNTAX ── */
+.syntaxCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.syntaxLayout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.syntaxCodeDark {
+  background: #141614;
+  border-radius: 14px;
+  padding: 1.75rem 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #e2e8f0;
+}
+
+.syntaxTable {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.syntaxRow {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.syntaxRowActive {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+}
+
+.syntaxRowTitle {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.syntaxRowDesc {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.45;
+}
+
+/* ── 04 / DECLARATION VS. DEFINITION ── */
+.declDefGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.declCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.declHeaderPill {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+  border-radius: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.defHeaderPill {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(147, 51, 234, 0.1);
+  color: #9333ea;
+  border-radius: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.miniCodeDark {
+  background: #141614;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  margin-bottom: 1.25rem;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  color: #334155;
+}
+
+.checkIconGreen {
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.checkIconPurple {
+  color: #9333ea;
+  flex-shrink: 0;
+}
+
+/* ── 05 / COMPLETE EXAMPLE ── */
+.completeExampleGrid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.completeEditorBox {
+  background: #141614;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.completeEditorHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #1a1d1a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.completeOutputBox {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.terminalOutput {
+  background: #141614;
+  border-radius: 12px;
+  padding: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: #34d399;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.runBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  background: #141614;
+  color: #ffffff;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.runBtn:hover {
+  background: #000000;
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================================ */
+@media (max-width: 1024px) {
+  .whatIsGrid,
+  .syntaxLayout,
+  .declDefGrid,
+  .completeExampleGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .stagesFlow {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .stageArrow {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+    gap: 2.5rem;
+  }
+
+  .benefitsList {
+    grid-template-columns: 1fr;
+  }
+
+  .syntaxRow {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}

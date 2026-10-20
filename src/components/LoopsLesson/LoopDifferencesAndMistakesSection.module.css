@@ -1,0 +1,232 @@
+/* =========================================================================
+   DEVORA — Loop Differences & Common Mistakes (Section 09)
+   ========================================================================= */
+
+.sectionWrapper {
+  position: relative;
+  width: 100%;
+  background: #f6f5f1;
+  padding: 4rem 0;
+  border-top: 1px solid #e2e8f0;
+  scroll-margin-top: 85px;
+}
+
+.container {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Section Header */
+.sectionHeader {
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #71766f;
+  margin-bottom: 0.5rem;
+}
+
+.eyebrowIndex {
+  color: #2563eb;
+  font-weight: 800;
+}
+
+.mainHeading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.3rem);
+  font-weight: 700;
+  color: #141614;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.015em;
+}
+
+.subHeading {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: #64748b;
+  margin: 0;
+  max-width: 720px;
+  line-height: 1.5;
+}
+
+/* ── DIFFERENCES TABLE ── */
+.tableCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  overflow-x: auto;
+}
+
+.comparisonTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+.comparisonTable th {
+  padding: 14px 16px;
+  background: #f8fafc;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #475569;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.comparisonTable td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  font-family: var(--font-sans);
+  color: #334155;
+  line-height: 1.5;
+}
+
+.aspectCell {
+  font-weight: 700;
+  color: #141614;
+  white-space: nowrap;
+}
+
+/* ── COMMON MISTAKES ACCORDION GRID ── */
+.mistakesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.mistakeCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mistakeHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.mistakeTitle {
+  font-family: var(--font-sans);
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.toggleCodeBtn {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #475569;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.toggleCodeBtn:hover {
+  background: #ffffff;
+  border-color: #94a3b8;
+}
+
+.mistakeProblem {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.codeBoxWrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.codeBoxHeader {
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.codeBoxHeaderBuggy {
+  background: #fef2f2;
+  color: #dc2626;
+  border-bottom: 1px solid #fecdd3;
+}
+
+.codeBoxHeaderFixed {
+  background: #ecfdf5;
+  color: #059669;
+  border-bottom: 1px solid #a7f3d0;
+}
+
+.codeContent {
+  padding: 12px 14px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: #1e293b;
+  background: #f8fafc;
+  margin: 0;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.solutionTip {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: #334155;
+  background: #f1f5f9;
+  border-left: 3px solid #2563eb;
+  padding: 8px 12px;
+  border-radius: 0 6px 6px 0;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .mistakesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+    gap: 3rem;
+  }
+}

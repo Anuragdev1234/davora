@@ -1,0 +1,603 @@
+/* =========================================================================
+   DEVORA — Functions in C Hero Section
+   ========================================================================= */
+
+.heroWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 580px;
+  background-color: #f6f5f1;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Background Photograph Layer */
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/devora-functions-campus.png');
+  background-size: cover;
+  background-position: center 38%;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+/* Atmospheric Legibility Scrims */
+.scrimOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(246, 245, 241, 0.98) 0%,
+    rgba(246, 245, 241, 0.92) 28%,
+    rgba(246, 245, 241, 0.62) 48%,
+    rgba(246, 245, 241, 0.18) 72%,
+    rgba(246, 245, 241, 0.35) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.bottomFadeOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: linear-gradient(to top, #f6f5f1 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Main Container */
+.heroContainer {
+  position: relative;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2.5rem;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr 1.38fr;
+  column-gap: 2rem;
+  align-items: center;
+  min-height: 540px;
+}
+
+/* ── LEFT COLUMN ── */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 520px;
+  z-index: 4;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #64748b;
+  margin-bottom: 0.85rem;
+}
+
+.eyebrowDash {
+  width: 14px;
+  height: 2px;
+  background-color: #ef4444;
+  border-radius: 2px;
+}
+
+.heroTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(3.2rem, 5.2vw, 4.6rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: #141614;
+  margin: 0 0 1.25rem 0;
+  letter-spacing: -0.025em;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleAccentC {
+  color: #2563eb;
+}
+
+.leadParagraph {
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #334155;
+  margin: 0 0 1.75rem 0;
+}
+
+.ctaButtonGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-full);
+  background-color: #141614;
+  color: #ffffff;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.14);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ctaPrimary:hover {
+  background-color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #1e293b;
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.ctaSecondary:hover {
+  background-color: #ffffff;
+  border-color: #94a3b8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Feature Benefits Strip */
+.benefitStrip {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  border-radius: 12px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 4px;
+  border-right: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.benefitItem:last-child {
+  border-right: none;
+}
+
+.benefitIcon {
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.benefitTitle {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #1e293b;
+  white-space: nowrap;
+}
+
+/* ── RIGHT STAGE: Floating Code Editor + Function Diagram + Annotation ── */
+.rightStage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.25rem;
+  min-height: 400px;
+  z-index: 4;
+}
+
+/* Floating Code Editor */
+.editorCard {
+  width: 410px;
+  flex-shrink: 0;
+  background: #141614;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 24px 48px -12px rgba(0, 0, 0, 0.38),
+    0 0 0 1px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 5;
+}
+
+.editorTitleBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #1a1d1a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.macControls {
+  display: flex;
+  gap: 6px;
+}
+
+.macDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.macDotRed { background-color: #ef4444; }
+.macDotAmber { background-color: #f59e0b; }
+.macDotGreen { background-color: #10b981; }
+
+.editorTabs {
+  display: flex;
+  gap: 4px;
+}
+
+.editorTab {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #71766f;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.editorTabActive {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.editorCopyBtn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.editorCopyBtn:hover {
+  color: #38bdf8;
+}
+
+.codeBody {
+  padding: 14px 16px 18px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: #d1d5db;
+  overflow-x: auto;
+}
+
+.codeLine {
+  display: flex;
+  align-items: baseline;
+  white-space: pre;
+}
+
+.lineNum {
+  width: 22px;
+  color: #555a52;
+  user-select: none;
+  font-size: 0.72rem;
+  text-align: right;
+  padding-right: 10px;
+  flex-shrink: 0;
+}
+
+/* Syntax Highlighting */
+.syntaxPreproc { color: #a78bfa; font-weight: 600; }
+.syntaxComment { color: #64748b; font-style: italic; }
+.syntaxString { color: #86efac; }
+.syntaxType { color: #38bdf8; }
+.syntaxFunc { color: #fde047; }
+.syntaxKeyword { color: #f43f5e; font-weight: 600; }
+.syntaxNum { color: #fb923c; }
+.syntaxPunct { color: #94a3b8; }
+.syntaxVar { color: #f1f5f9; }
+
+/* ── FLOATING FUNCTION CALL VISUAL OBJECT ── */
+.functionCallVisualObject {
+  width: 210px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 5;
+}
+
+/* Function Call Card */
+.funcCallHeaderBox {
+  background: rgba(20, 22, 20, 0.94);
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  border-radius: 12px;
+  padding: 8px 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.funcCallLabel {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 2px;
+}
+
+.funcCallPill {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid #3b82f6;
+  border-radius: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #60a5fa;
+}
+
+/* Middle Row: Parameters + Body + Process */
+.funcMiddleRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.funcParamBox {
+  background: rgba(20, 22, 20, 0.94);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 10px;
+  padding: 6px 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #93c5fd;
+  text-align: center;
+}
+
+.funcParamTitle {
+  font-size: 0.62rem;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.funcProcessBox {
+  background: rgba(20, 22, 20, 0.94);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 10px;
+  padding: 6px 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #fcd34d;
+  text-align: center;
+}
+
+.funcProcessTitle {
+  font-size: 0.62rem;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+/* Function Body Card */
+.funcBodyBox {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(217, 119, 6, 0.06));
+  border: 1px solid #f59e0b;
+  border-radius: 12px;
+  padding: 10px 12px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
+}
+
+.funcBodyTitle {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fbbf24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.funcBodySub {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  color: #cbd5e1;
+}
+
+/* Return Value Box */
+.funcReturnBox {
+  background: rgba(20, 22, 20, 0.94);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 12px;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.funcReturnLabel {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 2px;
+}
+
+.funcReturnPill {
+  display: inline-block;
+  padding: 3px 12px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid #10b981;
+  border-radius: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #34d399;
+}
+
+/* Handwritten Annotation & Curved SVG Arrow */
+.annotationCluster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 125px;
+  flex-shrink: 0;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.annotationText {
+  font-family: 'Caveat', 'Playfair Display', cursive, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #1e293b;
+  line-height: 1.25;
+  text-align: center;
+  transform: rotate(-3deg);
+  margin-bottom: 4px;
+}
+
+.annotationArrowSvg {
+  width: 85px;
+  height: 42px;
+  overflow: visible;
+}
+
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================================ */
+@media (max-width: 1400px) {
+  .heroContainer {
+    column-gap: 1.5rem;
+  }
+
+  .editorCard {
+    width: 360px;
+  }
+
+  .functionCallVisualObject {
+    width: 190px;
+  }
+
+  .benefitStrip {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .benefitItem:nth-child(3) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .scrimOverlay {
+    background: linear-gradient(
+      180deg,
+      rgba(246, 245, 241, 0.98) 0%,
+      rgba(246, 245, 241, 0.94) 40%,
+      rgba(246, 245, 241, 0.88) 100%
+    );
+  }
+
+  .heroContainer {
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .leftColumn {
+    max-width: 100%;
+  }
+
+  .rightStage {
+    justify-content: flex-start;
+  }
+
+  .annotationCluster {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContainer {
+    padding: 2rem 1rem;
+  }
+
+  .heroTitle {
+    font-size: 2.75rem;
+  }
+
+  .ctaButtonGroup {
+    flex-wrap: wrap;
+  }
+
+  .benefitStrip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefitItem {
+    border-right: none;
+  }
+
+  .rightStage {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .editorCard {
+    width: 100%;
+  }
+
+  .functionCallVisualObject {
+    width: 100%;
+  }
+}

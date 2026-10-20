@@ -1,0 +1,395 @@
+.section {
+  padding: 5rem 2rem;
+  background-color: var(--color-bg, #fcfcfc);
+  border-bottom: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.06));
+  scroll-margin-top: 5.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  margin-bottom: 2.5rem;
+}
+
+.sectionNumber {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-blue, #2563eb);
+  margin-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif, "Newsreader", Georgia, serif);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 400;
+  color: var(--color-text-primary, #111111);
+  margin-bottom: 0.75rem;
+}
+
+.sectionDesc {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #555555);
+  max-width: 680px;
+}
+
+/* Simulator Control Bar */
+.simControlsBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.controlsGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.simBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  background: #f4f4f5;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #27272a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.simBtn:hover:not(:disabled) {
+  background: #18181b;
+  color: #ffffff;
+  border-color: #18181b;
+}
+
+.simBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.simBtnPrimary {
+  background: var(--color-accent-blue, #2563eb);
+  color: #ffffff;
+  border-color: var(--color-accent-blue, #2563eb);
+}
+
+.simBtnPrimary:hover:not(:disabled) {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.speedToggle {
+  display: inline-flex;
+  align-items: center;
+  background: #f4f4f5;
+  border-radius: 6px;
+  padding: 0.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.speedBtn {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  border: none;
+  background: transparent;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #52525b;
+  cursor: pointer;
+}
+
+.speedBtnActive {
+  background: #ffffff;
+  color: #18181b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stepIndicator {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #52525b;
+}
+
+/* Three-column Simulator Grid */
+.simulatorGrid {
+  display: grid;
+  grid-template-columns: 35% 32% 33%;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Column 1: Source Code View */
+.sourceCol {
+  background: #171917;
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.colHeader {
+  padding: 0.75rem 1rem;
+  background: #111211;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a1a1aa;
+}
+
+.sourceScroll {
+  padding: 1rem 0;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  overflow-y: auto;
+  max-height: 480px;
+}
+
+.simLine {
+  display: flex;
+  align-items: center;
+  padding: 0.15rem 1rem;
+  transition: background 0.15s ease;
+}
+
+.simLineActive {
+  background: rgba(37, 99, 235, 0.25) !important;
+  border-left: 3px solid #3b82f6;
+}
+
+.simLineNum {
+  width: 24px;
+  font-size: 0.6875rem;
+  color: #52525b;
+  text-align: right;
+  margin-right: 0.85rem;
+  user-select: none;
+}
+
+.simLineCode {
+  color: #e4e4e7;
+  white-space: pre;
+}
+
+/* Column 2: Variable Inspector */
+.variablesCol {
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.08));
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.varsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding-bottom: 0.75rem;
+}
+
+.varsTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #18181b;
+}
+
+.varsBadge {
+  font-size: 0.6875rem;
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.varsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.varCard {
+  background: #fafaf9;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.varName {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.varValue {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #18181b;
+  padding: 0.15rem 0.5rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+
+.varCond {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.condTrue {
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+.condFalse {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.condNone {
+  background: #f4f4f5;
+  color: #71717a;
+}
+
+.stepExplainerBox {
+  margin-top: auto;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+}
+
+.stepExplainerTitle {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #475569;
+  margin-bottom: 0.35rem;
+}
+
+.stepExplainerText {
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: #1e293b;
+}
+
+/* Column 3: Output Terminal */
+.terminalCol {
+  background: #171917;
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.terminalHeader {
+  padding: 0.75rem 1rem;
+  background: #111211;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terminalTitle {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a1a1aa;
+}
+
+.terminalStream {
+  flex: 1;
+  padding: 1.25rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  letter-spacing: 0.12em;
+  color: #e4e4e7;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  min-height: 280px;
+}
+
+.cursorBlink {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background: #2563eb;
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .simulatorGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sourceScroll,
+  .terminalStream {
+    max-height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .simControlsBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controlsGroup {
+    justify-content: space-between;
+  }
+}

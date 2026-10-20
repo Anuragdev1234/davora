@@ -1,0 +1,395 @@
+.section {
+  padding: 5rem 2rem;
+  background-color: var(--color-bg, #fcfcfc);
+  border-bottom: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.06));
+  scroll-margin-top: 5.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  margin-bottom: 2.5rem;
+}
+
+.sectionNumber {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-blue, #2563eb);
+  margin-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif, "Newsreader", Georgia, serif);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 400;
+  color: var(--color-text-primary, #111111);
+  margin-bottom: 0.75rem;
+}
+
+.sectionDesc {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #555555);
+  max-width: 720px;
+}
+
+/* Simulator Control Bar */
+.simControlsBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.controlsGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.simBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  background: #f4f4f5;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #27272a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.simBtn:hover:not(:disabled) {
+  background: #18181b;
+  color: #ffffff;
+  border-color: #18181b;
+}
+
+.simBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.simBtnPrimary {
+  background: var(--color-accent-blue, #2563eb);
+  color: #ffffff;
+  border-color: var(--color-accent-blue, #2563eb);
+}
+
+.simBtnPrimary:hover:not(:disabled) {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.speedToggle {
+  display: flex;
+  background: #f1f5f9;
+  border-radius: 6px;
+  padding: 2px;
+  margin-left: 0.5rem;
+}
+
+.speedBtn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.speedBtnActive {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stepIndicator {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+/* Three Column Grid: Source Line, Variables, Terminal */
+.simulatorGrid {
+  display: grid;
+  grid-template-columns: 38% 30% 32%;
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-bottom: 1.5rem;
+}
+
+/* Column 1: Source Code View */
+.sourceCol {
+  background: #171917;
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.colHeader {
+  background: #111211;
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sourceScroll {
+  padding: 0.75rem 0;
+  overflow-y: auto;
+  max-height: 440px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.simLine {
+  display: flex;
+  padding: 0.1rem 1rem;
+  color: #cbd5e1;
+}
+
+.simLineActive {
+  background: rgba(37, 99, 235, 0.25);
+  border-left: 3px solid #60a5fa;
+  color: #ffffff;
+}
+
+.simLineNum {
+  width: 28px;
+  color: #64748b;
+  text-align: right;
+  padding-right: 0.75rem;
+  user-select: none;
+}
+
+.simLineActive .simLineNum {
+  color: #60a5fa;
+  font-weight: 700;
+}
+
+.simLineCode {
+  white-space: pre;
+}
+
+/* Column 2: Variable State */
+.variablesCol {
+  background: #ffffff;
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.08));
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.varsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.varsTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #475569;
+}
+
+.varsBadge {
+  font-size: 0.6875rem;
+  font-family: var(--font-mono, monospace);
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.varsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.varCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.45rem 0.75rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+}
+
+.varName {
+  color: #64748b;
+  font-family: var(--font-mono, monospace);
+}
+
+.varValue {
+  font-family: var(--font-mono, monospace);
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.varCond {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+
+.condTrue {
+  background: #dcfce7;
+  color: #15803d;
+  font-weight: 600;
+}
+
+.condFalse {
+  background: #fee2e2;
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.condNone {
+  color: #94a3b8;
+}
+
+/* Column 3: Terminal Console Output */
+.terminalCol {
+  background: #111211;
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.terminalHeader {
+  background: #0a0b0a;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.terminalDots {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.dotRed {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ef4444;
+}
+
+.dotYellow {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #eab308;
+}
+
+.dotGreen {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.terminalTitle {
+  font-size: 0.6875rem;
+  font-family: var(--font-mono, monospace);
+  color: #94a3b8;
+}
+
+.terminalOutput {
+  padding: 1.25rem;
+  flex: 1;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #f1f5f9;
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.cursorBlink {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background: #60a5fa;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: cursorPulse 1s infinite;
+}
+
+@keyframes cursorPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Bottom CPU Step Description Box */
+.stepDescBox {
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.08));
+  border-left: 4px solid var(--color-accent-blue, #2563eb);
+  border-radius: var(--radius-md, 8px);
+  padding: 1rem 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #334155;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.stepDescBox strong {
+  color: #0f172a;
+}
+
+@media (max-width: 992px) {
+  .simulatorGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 3.5rem 1.25rem;
+  }
+}

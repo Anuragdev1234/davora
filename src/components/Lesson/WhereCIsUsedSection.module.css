@@ -1,0 +1,116 @@
+/* ============================================================
+   DEVORA — SECTION 6: WHERE C IS USED
+   Editorial technical grid with refined motifs
+   ============================================================ */
+
+.section {
+  margin-bottom: 4.5rem;
+}
+
+.sectionHeader {
+  margin-bottom: 1.75rem;
+}
+
+.sectionNumber {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.subheading {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}
+
+/* ── 3-Column Editorial Grid ── */
+.domainGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+}
+
+.domainCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 1.35rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(25, 27, 25, 0.02);
+}
+
+.domainCard:hover {
+  border-color: var(--color-text);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(25, 27, 25, 0.06);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text);
+  flex-shrink: 0;
+}
+
+.domainCard:hover .iconWrapper {
+  background-color: var(--color-text);
+  color: #FFFFFF;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.cardText {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-top: auto;
+}
+
+@media (max-width: 860px) {
+  .domainGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .domainGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,168 @@
+/* =========================================================================
+   DEVORA — Recursion, Call Stack, Memory & Scope (Sections 13, 14, 15, 16)
+   ========================================================================= */
+
+.sectionWrapper {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  padding: 4.5rem 0 4rem;
+  border-top: 1px solid #e2e8f0;
+  scroll-margin-top: 85px;
+}
+
+.container {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Header */
+.sectionHeader {
+  margin-bottom: 2rem;
+}
+
+.indexBadge {
+  display: inline-block;
+  padding: 3px 8px;
+  background: #e2e8f0;
+  color: #1e293b;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #141614;
+  margin: 0 0 0.5rem 0;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── 13 / RECURSION ── */
+.recursionGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.recursionCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.recursionTree {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 1.25rem;
+}
+
+.recNode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  transition: all 0.25s ease;
+}
+
+.recNodeActive {
+  border-color: #2563eb;
+  background: #eff6ff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+  transform: translateX(4px);
+}
+
+.recNodeBase {
+  border-color: #10b981;
+  background: #ecfdf5;
+}
+
+/* ── 14 / CALL STACK ── */
+.stackGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.stackFrameBox {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+  min-height: 220px;
+  border: 2px dashed #cbd5e1;
+  border-radius: 14px;
+  padding: 14px;
+  background: #f8fafc;
+  justify-content: flex-start;
+}
+
+.stackFrame {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #2563eb;
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.stackFrameTop {
+  border-left-color: #f59e0b;
+  background: #fffbeb;
+}
+
+/* ── 15 / MEMORY MANAGEMENT ── */
+.memorySimGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.memoryBox {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 1.75rem;
+}
+
+/* ── 16 / SCOPE ── */
+.scopeGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================================ */
+@media (max-width: 1024px) {
+  .recursionGrid,
+  .stackGrid,
+  .memorySimGrid,
+  .scopeGrid {
+    grid-template-columns: 1fr;
+  }
+}

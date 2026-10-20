@@ -1,0 +1,278 @@
+/* ============================================================
+   DEVORA — PRACTICAL TERMINAL SECTION STYLES
+   Terminal runner with synchronized 6-step conceptual trace
+   ============================================================ */
+
+.section {
+  margin-bottom: 4.5rem;
+}
+
+.sectionHeader {
+  margin-bottom: 1.75rem;
+}
+
+.sectionNumber {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.subheading {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}
+
+/* ── Code & Terminal Box ── */
+.terminalCard {
+  background-color: var(--color-dark-bg);
+  border: 1px solid var(--color-dark-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.16);
+  margin-top: 1.75rem;
+}
+
+.terminalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background-color: #1A1C1A;
+  border-bottom: 1px solid var(--color-dark-border);
+}
+
+.terminalTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #333633;
+}
+
+.fileName {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-dark-muted);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.copyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-dark-muted);
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.copyBtn:hover {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.runBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #121412;
+  background-color: var(--color-accent);
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid var(--color-accent);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.runBtn:hover:not(:disabled) {
+  background-color: var(--color-accent-dim);
+}
+
+/* Code Area */
+.codeArea {
+  padding: 1.25rem 1.25rem 1.25rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.codeLine {
+  display: flex;
+  padding: 0 1.25rem;
+}
+
+.lineNum {
+  width: 2.25rem;
+  text-align: right;
+  padding-right: 1.25rem;
+  color: #4A4D4A;
+  user-select: none;
+}
+
+.lineCode {
+  color: #D8DAD4;
+  white-space: pre;
+}
+
+/* Syntax tokens */
+.tokPrep { color: #7EC8E3; }
+.tokType { color: #79B8FF; }
+.tokFunc { color: #C5E97B; }
+.tokKeyw { color: #EE82EE; }
+.tokStr  { color: #98C379; }
+.tokNum  { color: #D19A66; }
+.tokPunc { color: #ABB2BF; }
+
+/* ── Output Box ── */
+.outputArea {
+  border-top: 1px solid var(--color-dark-border);
+  background-color: #121412;
+  padding: 1.25rem;
+}
+
+.outputHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-dark-muted);
+  margin-bottom: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.stdoutBox {
+  background-color: #0A0C0A;
+  border: 1px solid #232623;
+  border-radius: 8px;
+  padding: 0.85rem 1.15rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: #E6E8E2;
+}
+
+.stdoutPrompt {
+  color: var(--color-accent);
+  margin-right: 0.5rem;
+  user-select: none;
+}
+
+/* ── Trace Sequence Cards ── */
+.traceSection {
+  margin-top: 2rem;
+}
+
+.traceTitle {
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  margin-bottom: 0.85rem;
+}
+
+.traceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.traceCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.traceCard:hover {
+  border-color: var(--color-text);
+  transform: translateY(-2px);
+}
+
+.traceCardActive {
+  background-color: #FFFFFF;
+  border-color: var(--color-text);
+  outline: 2px solid var(--color-accent);
+  box-shadow: 0 4px 12px rgba(25, 27, 25, 0.06);
+}
+
+.traceNum {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.traceCardActive .traceNum {
+  background-color: var(--color-text);
+  color: #FFFFFF;
+}
+
+.traceText {
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+@media (max-width: 860px) {
+  .traceGrid {
+    grid-template-columns: 1fr;
+  }
+}

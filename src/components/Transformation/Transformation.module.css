@@ -1,0 +1,652 @@
+/* ============================================================
+   DEVORA — TRANSFORMATION SECTION STYLES
+   Mineral editorial aesthetic with dark programming contrast
+   ============================================================ */
+
+.section {
+  position: relative;
+  padding: var(--space-section) 0;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border-light);
+  overflow: hidden;
+}
+
+.header {
+  margin-bottom: var(--space-12);
+  max-width: var(--max-width-md);
+}
+
+.sectionLabel {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.heading {
+  font-size: clamp(2rem, 3.5vw + 0.5rem, 3.25rem);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+.subheading {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 680px;
+}
+
+/* ── The 4-Stage Horizontal Transformation Flow ── */
+.flowWrapper {
+  position: relative;
+  margin-bottom: var(--space-20);
+}
+
+.pipeline {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: var(--space-3);
+  position: relative;
+}
+
+/* ── Individual Stage Card ── */
+.stageCard {
+  flex: 1;
+  min-width: 0;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.stageCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border);
+}
+
+.stageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border-light);
+  background-color: rgba(245, 245, 241, 0.4);
+}
+
+.stageBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.stageDot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-text-secondary);
+}
+
+.stageDotActive {
+  background-color: var(--color-accent-dark);
+}
+
+.stageNumber {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.stageBody {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.stageTitle {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stageDesc {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+  margin-bottom: var(--space-4);
+}
+
+/* ── Stage 1: PROBLEM Visual ── */
+.problemVisual {
+  margin-top: auto;
+  background-color: var(--color-bg-warm);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+}
+
+.arrayHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+}
+
+.arrayGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.arrayCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-1);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.arrayCellTarget {
+  border-color: var(--color-accent-dark);
+  background-color: rgba(197, 233, 123, 0.15);
+  box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.cellIndex {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+
+.cellValue {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.cellValueHighlight {
+  color: #2a5a0c;
+}
+
+.arrayTargetTag {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #2a5a0c;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── Stage 2: LOGIC Visual ── */
+.logicVisual {
+  margin-top: auto;
+  background-color: var(--color-bg-warm);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.logicStep {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-light);
+}
+
+.logicStepIcon {
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+}
+
+.logicDecision {
+  background-color: #FAFBF7;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+}
+
+.logicDecisionLabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.logicBranches {
+  display: flex;
+  gap: 6px;
+}
+
+.branchYes {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  background-color: rgba(197, 233, 123, 0.35);
+  color: #1f4209;
+  padding: 3px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--color-accent);
+}
+
+.branchNo {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: var(--color-text-secondary);
+  padding: 3px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--color-border-light);
+}
+
+/* ── Stage 3: C PROGRAM Visual ── */
+.codeCard {
+  background-color: var(--color-dark-bg);
+  border-color: var(--color-dark-border);
+}
+
+.codeCard .stageHeader {
+  background-color: #121312;
+  border-color: var(--color-dark-border);
+}
+
+.codeCard .stageBadge {
+  color: var(--color-dark-text);
+}
+
+.codeCard .stageTitle {
+  color: var(--color-dark-text);
+}
+
+.codeCard .stageDesc {
+  color: var(--color-dark-muted);
+}
+
+.codeVisual {
+  margin-top: auto;
+  background-color: var(--color-dark-surface);
+  border: 1px solid var(--color-dark-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.codeTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background-color: #151715;
+  border-bottom: 1px solid var(--color-dark-border);
+}
+
+.windowDots {
+  display: flex;
+  gap: 5px;
+}
+
+.windowDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dotRed { background-color: #E06C75; }
+.dotYellow { background-color: #E5C07B; }
+.dotGreen { background-color: #98C379; }
+
+.fileName {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-dark-muted);
+}
+
+.codeEditor {
+  padding: 10px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: #abb2bf;
+  overflow-x: auto;
+}
+
+.codeLine {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  white-space: pre;
+}
+
+.lineNumber {
+  user-select: none;
+  color: #4b5263;
+  font-size: 0.65rem;
+  width: 14px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Syntax Highlighting */
+.synKeyword { color: #C678DD; font-weight: 500; }
+.synType { color: #E5C07B; }
+.synFunc { color: #61AFEF; }
+.synNum { color: #D19A66; }
+.synString { color: #98C379; }
+.synOp { color: #56B6C2; }
+.synVar { color: #E06C75; }
+.synPunct { color: #ABB2BF; }
+
+/* ── Stage 4: RESULT Visual ── */
+.resultVisual {
+  margin-top: auto;
+  background-color: var(--color-bg-warm);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.resultNumeral {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.04em;
+  position: relative;
+}
+
+.resultNumeralBadge {
+  position: absolute;
+  top: -4px;
+  right: -24px;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  padding: 2px 5px;
+  border-radius: var(--radius-full);
+}
+
+.resultLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: #275608;
+  background-color: rgba(197, 233, 123, 0.4);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-3);
+}
+
+.resultTerminal {
+  width: 100%;
+  background-color: var(--color-dark-bg);
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--color-dark-muted);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terminalOutput {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* ── Connector Arrows (Desktop & Mobile) ── */
+.connectorDesktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  flex-shrink: 0;
+  color: var(--color-border);
+}
+
+.connectorMobile {
+  display: none;
+}
+
+.connectorSvg {
+  width: 32px;
+  height: 24px;
+  overflow: visible;
+}
+
+/* ── Bottom Cards (Theory & Programming) ── */
+.bottomCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.card {
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+  position: relative;
+  min-height: 340px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Left Card: Theory (Light) */
+.theoryCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.cardLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.cardTitle {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+}
+
+.cardText {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+  max-width: 480px;
+}
+
+.cardVisualTheory {
+  background-color: var(--color-bg-warm);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.memoryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-2);
+}
+
+.memoryBlock {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  padding: 6px;
+  text-align: center;
+}
+
+.memoryAddr {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+}
+
+.memoryVal {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Right Card: Programming (Dark) */
+.programmingCard {
+  background-color: var(--color-dark-bg);
+  border: 1px solid var(--color-dark-border);
+  color: var(--color-dark-text);
+}
+
+.programmingCard .cardLabel {
+  color: var(--color-accent);
+}
+
+.programmingCard .cardTitle {
+  color: var(--color-dark-text);
+}
+
+.programmingCard .cardText {
+  color: var(--color-dark-muted);
+}
+
+.cardVisualProg {
+  background-color: var(--color-dark-surface);
+  border: 1px solid var(--color-dark-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--color-dark-muted);
+  margin-bottom: var(--space-6);
+}
+
+.progLine {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.progPrompt {
+  color: var(--color-accent);
+}
+
+.progAsm {
+  color: #abb2bf;
+}
+
+/* ── Actions ── */
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: auto;
+}
+
+/* ── Responsive Breakpoints ── */
+@media (max-width: 1024px) {
+  .pipeline {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .connectorDesktop {
+    display: none;
+  }
+
+  .connectorMobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-3) 0;
+    color: var(--color-border);
+  }
+
+  .bottomCardsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .card {
+    padding: var(--space-5);
+  }
+
+  .memoryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

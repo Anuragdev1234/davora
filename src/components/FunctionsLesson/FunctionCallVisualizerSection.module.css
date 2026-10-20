@@ -1,0 +1,332 @@
+/* =========================================================================
+   DEVORA — Function Call Visualizer Section (Scene 06 Signature Feature)
+   ========================================================================= */
+
+.sectionWrapper {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  padding: 4.5rem 0 4rem;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  scroll-margin-top: 85px;
+}
+
+.container {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+.sectionHeader {
+  margin-bottom: 2rem;
+}
+
+.indexBadge {
+  display: inline-block;
+  padding: 3px 8px;
+  background: #e2e8f0;
+  color: #1e293b;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #141614;
+  margin: 0 0 0.5rem 0;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── INTERACTIVE ARGS BAR ── */
+.argsControlBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 12px 18px;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.argsInputsGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.argInputLabel {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.argInputField {
+  width: 64px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #0f172a;
+  background: #ffffff;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.argInputField:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.argsResetBtn {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.argsResetBtn:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+/* ── VISUAL FLOW STAGE ── */
+.flowStageCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.diagramSvgWrapper {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.diagramSvg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* SVG Node Classes */
+.nodeCallingBox {
+  fill: #ffffff;
+  stroke: #3b82f6;
+  stroke-width: 1.8;
+  rx: 14;
+  transition: all 0.3s ease;
+}
+
+.nodeCalledBox {
+  fill: #fffbeb;
+  stroke: #f59e0b;
+  stroke-width: 1.8;
+  rx: 14;
+  transition: all 0.3s ease;
+}
+
+.nodeResultBox {
+  fill: #ffffff;
+  stroke: #10b981;
+  stroke-width: 1.8;
+  rx: 14;
+  transition: all 0.3s ease;
+}
+
+.nodeActiveGlow {
+  filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.35));
+  stroke-width: 2.5;
+}
+
+.nodeAmberGlow {
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.35));
+  stroke-width: 2.5;
+}
+
+.nodeGreenGlow {
+  filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.35));
+  stroke-width: 2.5;
+}
+
+/* Node Text Styles */
+.nodeHeaderBlue {
+  fill: #2563eb;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.nodeHeaderAmber {
+  fill: #d97706;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.nodeHeaderGreen {
+  fill: #059669;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.nodeCodeText {
+  fill: #1e293b;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.nodePillLabel {
+  fill: #64748b;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+/* ── STEP EXPLANATION BANNER ── */
+.stepBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 14px 20px;
+  margin-top: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.stepBannerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stepPill {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.stepDescription {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: #1e293b;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ── PLAYER CONTROLS ── */
+.playerControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.playbackButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ctrlBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #1e293b;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ctrlBtn:hover:not(:disabled) {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.ctrlBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.ctrlBtnPrimary {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.ctrlBtnPrimary:hover:not(:disabled) {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================================ */
+@media (max-width: 768px) {
+  .argsControlBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .playerControls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stepBanner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

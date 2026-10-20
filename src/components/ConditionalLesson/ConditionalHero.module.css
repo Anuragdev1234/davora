@@ -1,0 +1,509 @@
+/* ============================================================
+   DEVORA — CONDITIONAL STATEMENTS IN C HERO STYLES
+   Cinematic Editorial Hero with Central Code Editor, Flowchart & Connectors
+   ============================================================ */
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 860px;
+  background-color: #F6F5F1;
+  overflow: hidden;
+  padding: 2.5rem 0 3.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Background Terrain Layer */
+.terrainBackground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 55%;
+  background-image: url('/images/structure_editorial_terrain.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0.9) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0.9) 100%);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1560px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 3.5vw, 48px);
+  z-index: 2;
+}
+
+/* Top Meta Eyebrow Bar */
+.metaHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+}
+
+@media (max-width: 640px) {
+  .metaHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.brandGroup {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.brandLogo {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #191b19;
+  text-transform: uppercase;
+}
+
+.brandSubtitle {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: #787b74;
+  text-transform: uppercase;
+}
+
+.lessonBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4a4e47;
+  backdrop-filter: blur(8px);
+}
+
+/* 4-Zone Desktop Grid */
+.heroGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(260px, 290px) minmax(210px, 230px) minmax(380px, 1fr) minmax(320px, 350px);
+  gap: clamp(14px, 1.8vw, 24px);
+  align-items: start;
+}
+
+@media (max-width: 1400px) {
+  .heroGrid {
+    grid-template-columns: 260px 210px 1fr 310px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .heroGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .leftColumn {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .leftColumn {
+    grid-column: span 1;
+  }
+}
+
+/* ============================================================
+   ZONE 1: Left Editorial Intro
+   ============================================================ */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  z-index: 4;
+}
+
+.headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 3.8vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #191b19;
+  margin: 0 0 1.25rem 0;
+}
+
+.titleLine {
+  display: block;
+}
+
+.leadDescription {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #4c5148;
+  margin: 0 0 1rem 0;
+}
+
+.subDescription {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #63685e;
+  margin: 0 0 1.75rem 0;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: var(--radius-full);
+  background-color: #191b19;
+  color: #ffffff;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  width: fit-content;
+}
+
+.ctaButton:hover {
+  background-color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* ============================================================
+   ZONE 2: Center-Left 3 Concept Cards Stack
+   ============================================================ */
+.conceptStack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 4;
+}
+
+.conceptCard {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  text-align: left;
+}
+
+.conceptCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
+}
+
+.conceptCardActive {
+  background: #ffffff;
+  border-color: currentColor;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.1);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.numberBadge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #191b19;
+  margin: 0;
+}
+
+.cardSubtitle {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  line-height: 1.35;
+  color: #63685e;
+  margin: 0 0 8px 0;
+}
+
+.codeBoxLight {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: #1e293b;
+  white-space: pre-wrap;
+}
+
+/* ============================================================
+   ZONE 3: Center Code Editor
+   ============================================================ */
+.centerColumn {
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+}
+
+.codeEditorCard {
+  width: 100%;
+  background: #141614;
+  border: 1px solid #282c28;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  position: relative;
+}
+
+.editorTitleBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: #1a1d1a;
+  border-bottom: 1px solid #282c28;
+}
+
+.macControls {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.macDot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.macDotRed { background: #ff5f56; }
+.macDotAmber { background: #ffbd2e; }
+.macDotGreen { background: #27c93f; }
+
+.editorFileName {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #8c9088;
+  letter-spacing: 0.05em;
+}
+
+.codeBody {
+  padding: 18px 20px 22px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.88rem;
+  line-height: 1.75;
+  background: #141614;
+  overflow-x: auto;
+}
+
+.codeLine {
+  display: flex;
+  align-items: baseline;
+  min-height: 1.75em;
+  white-space: pre;
+}
+
+.lineNum {
+  width: 28px;
+  color: #555a52;
+  user-select: none;
+  font-size: 0.76rem;
+  text-align: right;
+  padding-right: 14px;
+  flex-shrink: 0;
+}
+
+.codeText {
+  color: #d1d5db;
+}
+
+/* Syntax Highlighting Colors */
+.syntaxKeyword { color: #f43f5e; font-weight: 600; }
+.syntaxPreproc { color: #a78bfa; font-weight: 600; }
+.syntaxType { color: #38bdf8; }
+.syntaxString { color: #86efac; }
+.syntaxFunc { color: #fde047; }
+.syntaxNum { color: #fb923c; }
+.syntaxPunct { color: #94a3b8; }
+.syntaxVar { color: #f1f5f9; }
+.syntaxOp { color: #cbd5e1; font-weight: 500; }
+
+/* Dynamic Pill Highlight Outlines */
+.pillHighlight {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 6px;
+  border: 1.5px solid transparent;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  color: #f1f5f9;
+}
+
+.pillIf {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.16);
+}
+
+.pillIf.pillActive {
+  background: rgba(59, 130, 246, 0.32);
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.5);
+  border-color: #60a5fa;
+}
+
+.pillElseIf80 {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.16);
+}
+
+.pillElseIf80.pillActive {
+  background: rgba(16, 185, 129, 0.32);
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.5);
+  border-color: #34d399;
+}
+
+.pillElseIf70 {
+  border-color: #f43f5e;
+  background: rgba(244, 63, 94, 0.16);
+}
+
+.pillElseIf70.pillActive {
+  background: rgba(244, 63, 94, 0.32);
+  box-shadow: 0 0 14px rgba(244, 63, 94, 0.5);
+  border-color: #fb7185;
+}
+
+.pillElse {
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.16);
+}
+
+.pillElse.pillActive {
+  background: rgba(139, 92, 246, 0.32);
+  box-shadow: 0 0 14px rgba(139, 92, 246, 0.5);
+  border-color: #a78bfa;
+}
+
+/* Interactive Marks Controller */
+.marksControllerBar {
+  margin-top: 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.controllerLabel {
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #191b19;
+}
+
+.sliderWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  max-width: 240px;
+  margin: 0 16px;
+}
+
+.marksSlider {
+  width: 100%;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.marksValueBadge {
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  font-weight: 700;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 2px 8px;
+  color: #0f172a;
+}
+
+.outputResultPill {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: #141614;
+  color: #86efac;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid #282c28;
+}
+
+/* ============================================================
+   ZONE 4: Right Flowchart & Secondary Concept Cards
+   ============================================================ */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 4;
+}
+
+/* SVG Connector Lines Layer */
+.connectorsSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.connectorPath {
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke-width 0.25s ease, opacity 0.25s ease;
+}
+
+@media (max-width: 1180px) {
+  .connectorsSvg {
+    display: none;
+  }
+}

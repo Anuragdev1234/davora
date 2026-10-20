@@ -1,0 +1,224 @@
+/* ============================================================
+   DEVORA — STRUCTURE OUTPUT SECTION STYLES
+   Minimalist Restrained Dark Terminal Inset
+   ============================================================ */
+
+.sectionWrapper {
+  width: 100%;
+  padding: 4.5rem 0 5rem;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border-light);
+  scroll-margin-top: 120px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding-inline: clamp(24px, 4vw, 64px);
+}
+
+/* Header */
+.header {
+  margin-bottom: 3rem;
+  max-width: 680px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.85rem;
+}
+
+.eyebrowIndex {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.eyebrowDivider {
+  color: var(--color-text-muted);
+}
+
+.mainHeading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--color-text);
+  margin-bottom: 0.65rem;
+}
+
+.subHeading {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+/* Terminal Window */
+.terminalContainer {
+  max-width: 820px;
+  margin: 0 auto;
+  background-color: #161716;
+  border: 1px solid #282A28;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px -15px rgba(0, 0, 0, 0.22),
+              0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.terminalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.3rem;
+  background-color: #1D1F1D;
+  border-bottom: 1px solid #282A28;
+}
+
+.trafficLights {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dotRed {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #FF5F56;
+}
+
+.dotAmber {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #FFBD2E;
+}
+
+.dotGreen {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #27C93F;
+}
+
+.terminalTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: #8C8F88;
+  letter-spacing: 0.02em;
+}
+
+.terminalIcon {
+  color: #8C8F88;
+}
+
+.terminalActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #B5B8B0;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+}
+
+.actionBtn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+/* Terminal Body */
+.terminalBody {
+  padding: 1.5rem 1.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.85;
+}
+
+.terminalRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.prompt {
+  color: #6E726A;
+  user-select: none;
+}
+
+.command {
+  color: #E2E4DE;
+}
+
+.outputRow {
+  margin: 0.35rem 0;
+  padding: 0.25rem 0;
+}
+
+.outputText {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #C5E97B;
+  letter-spacing: 0.01em;
+}
+
+.cursor {
+  width: 7px;
+  height: 15px;
+  background-color: #A0A39C;
+  display: inline-block;
+  animation: cursorBlink 1.2s steps(2, start) infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .sectionWrapper {
+    padding: 3.5rem 0;
+  }
+  .mainHeading {
+    font-size: 2.1rem;
+  }
+  .terminalBody {
+    padding: 1.2rem;
+    font-size: 0.8rem;
+  }
+  .outputText {
+    font-size: 0.95rem;
+  }
+}

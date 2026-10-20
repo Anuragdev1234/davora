@@ -1,0 +1,305 @@
+.section {
+  padding: 5rem 2rem;
+  background-color: var(--color-bg, #fcfcfc);
+  border-bottom: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.06));
+  scroll-margin-top: 5.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  margin-bottom: 3.5rem;
+}
+
+.sectionNumber {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-blue, #2563eb);
+  margin-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif, "Newsreader", Georgia, serif);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 400;
+  color: var(--color-text-primary, #111111);
+  margin-bottom: 0.75rem;
+}
+
+.sectionDesc {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #555555);
+  max-width: 650px;
+}
+
+/* Two Column Layout */
+.grid {
+  display: grid;
+  grid-template-columns: 44% 56%;
+  gap: 3.5rem;
+  align-items: flex-start;
+}
+
+/* Left Input Control Surface */
+.controlSurface {
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.08));
+  border-radius: var(--radius-lg, 12px);
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.controlHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding-bottom: 1rem;
+}
+
+.controlLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #18181b;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stepperBtn {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: #f4f4f5;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #18181b;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stepperBtn:hover:not(:disabled) {
+  background: #e4e4e7;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.stepperBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.numberInput {
+  flex: 1;
+  height: 42px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 0 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #18181b;
+  text-align: center;
+  font-family: var(--font-mono, monospace);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.numberInput:focus {
+  border-color: var(--color-accent-blue, #2563eb);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.rangeSlider {
+  width: 100%;
+  accent-color: var(--color-accent-blue, #2563eb);
+  cursor: pointer;
+}
+
+/* Quick Presets Strip */
+.presetsStrip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.presetLabel {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #71717a;
+  margin-right: 0.25rem;
+}
+
+.presetBtn {
+  padding: 0.3rem 0.65rem;
+  background: #f4f4f5;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #3f3f46;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.presetBtn:hover,
+.presetBtnActive {
+  background: #18181b;
+  color: #ffffff;
+  border-color: #18181b;
+}
+
+/* Derived Metadata Cards */
+.metaGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 1.25rem;
+}
+
+.metaCard {
+  background: #fafaf9;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metaTitle {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #71717a;
+}
+
+.metaValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #18181b;
+  font-family: var(--font-mono, monospace);
+}
+
+.metaFormula {
+  font-size: 0.6875rem;
+  color: #a1a1aa;
+}
+
+/* Right Dynamic Pattern Canvas */
+.previewCanvasCard {
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.08));
+  border-radius: var(--radius-lg, 12px);
+  padding: 2.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.canvasHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding-bottom: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.canvasLabel {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #71717a;
+}
+
+.canvasStatus {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #16a34a;
+  background: #f0fdf4;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+}
+
+.patternRows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-family: var(--font-mono, monospace);
+  min-height: 280px;
+}
+
+.dynamicRow {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.dynamicRowIndex {
+  font-size: 0.75rem;
+  color: #a1a1aa;
+  width: 48px;
+  flex-shrink: 0;
+}
+
+.dynamicStars {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.dynamicStar {
+  font-size: 1.25rem;
+  color: #18181b;
+  font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .controlSurface,
+  .previewCanvasCard {
+    padding: 1.75rem 1.25rem;
+  }
+}

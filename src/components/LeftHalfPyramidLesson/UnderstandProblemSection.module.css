@@ -1,0 +1,238 @@
+.section {
+  padding: 5rem 2rem;
+  background-color: var(--color-bg, #fcfcfc);
+  border-bottom: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.06));
+  scroll-margin-top: 5.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  margin-bottom: 3rem;
+}
+
+.sectionNumber {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-blue, #2563eb);
+  margin-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif, "Newsreader", Georgia, serif);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 400;
+  color: var(--color-text-primary, #111111);
+  margin-bottom: 1rem;
+}
+
+.sectionDesc {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #555555);
+  max-width: 720px;
+}
+
+/* Two-column layout */
+.grid {
+  display: grid;
+  grid-template-columns: 52% 48%;
+  gap: 3.5rem;
+  align-items: stretch;
+}
+
+.leftCard {
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.08));
+  border-radius: var(--radius-lg, 12px);
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.promptLabel {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-tertiary, #888888);
+  margin-bottom: 0.75rem;
+}
+
+.statementQuote {
+  font-family: var(--font-serif, "Newsreader", Georgia, serif);
+  font-size: 1.45rem;
+  line-height: 1.4;
+  color: #18181b;
+  margin-bottom: 1.25rem;
+  font-style: italic;
+}
+
+.statementBody {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #4b5563;
+  margin-bottom: 1.75rem;
+}
+
+.requirementsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 1.5rem;
+}
+
+.requirementItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.requirementDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent-blue, #2563eb);
+  margin-top: 0.45rem;
+  flex-shrink: 0;
+}
+
+/* Right Output Preview Box */
+.rightCard {
+  background: #171917;
+  border-radius: var(--radius-lg, 12px);
+  padding: 2.25rem 2.5rem;
+  color: #ffffff;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.previewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.previewTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.previewBadge {
+  font-size: 0.75rem;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  background: rgba(37, 99, 235, 0.2);
+  color: #60a5fa;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(37, 99, 235, 0.35);
+}
+
+.outputTerminal {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  background: #111211;
+  padding: 1.5rem 1.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 1.5rem;
+  color: #f1f5f9;
+  letter-spacing: 0.08em;
+  user-select: none;
+}
+
+.terminalLine {
+  display: flex;
+  align-items: center;
+}
+
+.spaceUnit {
+  color: rgba(255, 255, 255, 0.22);
+  display: inline-block;
+}
+
+.starUnit {
+  color: #60a5fa;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.captionBox {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  border-left: 3px solid var(--color-accent-blue, #2563eb);
+}
+
+.captionBox strong {
+  color: #ffffff;
+}
+
+.legendBar {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legendDotSpace {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
+}
+
+.legendDotStar {
+  width: 8px;
+  height: 8px;
+  background: #60a5fa;
+  border-radius: 2px;
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 3.5rem 1.25rem;
+  }
+  .leftCard,
+  .rightCard {
+    padding: 1.5rem;
+  }
+}

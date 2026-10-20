@@ -1,0 +1,476 @@
+/* ============================================================
+   DEVORA — OPERATORS IN C HERO STYLES
+   Cinematic Editorial Hero with Central Code & 6 Category Panels
+   ============================================================ */
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 860px;
+  background-color: #F6F5F1;
+  overflow: hidden;
+  padding: 3rem 0 4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Background Terrain Layer (Recreating Reference Terrain) */
+.terrainBackground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60%;
+  background-image: url('/images/structure_editorial_terrain.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0.38;
+  pointer-events: none;
+  z-index: 1;
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,0.9) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,0.9) 100%);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1560px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 3.5vw, 48px);
+  z-index: 2;
+}
+
+/* Top Meta Bar */
+.metaHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 640px) {
+  .metaHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.brandGroup {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.brandLogo {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #191b19;
+  text-transform: uppercase;
+}
+
+.brandSubtitle {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: #787b74;
+  text-transform: uppercase;
+}
+
+.lessonBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4a4e47;
+  backdrop-filter: blur(8px);
+}
+
+/* Wide Hero Layout Grid */
+.heroLayout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: clamp(24px, 3vw, 40px);
+  align-items: start;
+}
+
+@media (max-width: 1200px) {
+  .heroLayout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* Left Editorial Column */
+.editorialColumn {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+.headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 4.2vw, 4.2rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #191b19;
+  margin: 0 0 1.5rem 0;
+}
+
+.titleLine {
+  display: block;
+}
+
+.leadParagraph {
+  font-size: 0.96rem;
+  line-height: 1.62;
+  color: #454942;
+  margin-bottom: 1.25rem;
+}
+
+.supportingParagraph {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #6c7067;
+  margin-bottom: 2.25rem;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.95rem 1.85rem;
+  background-color: #191b19;
+  color: #f5f5f1;
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  width: fit-content;
+}
+
+.ctaButton:hover {
+  background-color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Visual Stage: Panels + Code Editor + Output */
+.stageWrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) 240px;
+  gap: 20px;
+  align-items: center;
+}
+
+@media (max-width: 1380px) {
+  .stageWrapper {
+    grid-template-columns: 220px minmax(0, 1fr) 220px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .stageWrapper {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Panel Stacks */
+.leftPanelStack,
+.rightPanelStack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 4;
+}
+
+@media (max-width: 1024px) {
+  .leftPanelStack,
+  .rightPanelStack {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 680px) {
+  .leftPanelStack,
+  .rightPanelStack {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Individual Operator Category Card */
+.operatorCard {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid #e2e2dc;
+  border-radius: 14px;
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  position: relative;
+  text-align: left;
+}
+
+.operatorCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.operatorCardActive {
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.cardIconBadge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #191b19;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.cardDesc {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #5a5e56;
+  margin: 0 0 12px 0;
+}
+
+/* Chips Row */
+.chipsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.operatorChip {
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #f4f4f0;
+  border: 1px solid #e4e4dd;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #2b2e29;
+  transition: all 0.15s ease;
+}
+
+.operatorCardActive .operatorChip {
+  background: #fbfbf9;
+  border-color: #d6d6cc;
+}
+
+/* Center Editor Container */
+.centerEditorWrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+.codeEditorCard {
+  width: 100%;
+  background: #141614;
+  border: 1px solid #282c28;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  position: relative;
+}
+
+.editorTitleBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: #1b1e1b;
+  border-bottom: 1px solid #282c28;
+}
+
+.macControls {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.macDot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.macDotRed {
+  background: #ff5f56;
+}
+
+.macDotAmber {
+  background: #ffbd2e;
+}
+
+.macDotGreen {
+  background: #27c93f;
+}
+
+.editorFileName {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #8c9088;
+  letter-spacing: 0.04em;
+}
+
+/* Editor Code Body */
+.codeBody {
+  padding: 18px 20px 22px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: #e5e5dc;
+  overflow-x: auto;
+}
+
+.codeLine {
+  display: flex;
+  align-items: center;
+  white-space: pre;
+}
+
+.lineNumber {
+  width: 28px;
+  color: #555850;
+  font-size: 0.8rem;
+  user-select: none;
+  flex-shrink: 0;
+  text-align: right;
+  padding-right: 14px;
+}
+
+.lineText {
+  flex: 1;
+}
+
+/* Targeted Expression Highlights in Code */
+.pillHighlight {
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.25s ease;
+}
+
+.pillHighlightActive {
+  box-shadow: 0 0 12px currentColor;
+  transform: scale(1.05);
+}
+
+/* Floating Output Card */
+.outputCard {
+  width: 86%;
+  margin-top: -16px;
+  background: rgba(26, 29, 26, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid #363b35;
+  border-radius: 12px;
+  padding: 12px 18px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+  z-index: 5;
+  position: relative;
+}
+
+.outputHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #a4a99f;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.outputDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff5f56;
+}
+
+.outputBody {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.86rem;
+  color: #86efac;
+  line-height: 1.6;
+  white-space: pre;
+  margin: 0;
+}
+
+/* SVG Connector Lines Layer */
+.connectorsSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.connectorPath {
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke-width 0.25s ease, opacity 0.25s ease;
+}
+
+@media (max-width: 1024px) {
+  .connectorsSvg {
+    display: none;
+  }
+  .outputCard {
+    width: 100%;
+    margin-top: 14px;
+  }
+}

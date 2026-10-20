@@ -1,0 +1,104 @@
+.section {
+  padding: var(--space-section) 0;
+  background: var(--color-bg);
+}
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.header {
+  margin-bottom: var(--space-16);
+}
+.sectionLabel {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  display: block;
+  margin-bottom: var(--space-4);
+}
+.heading {
+  font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+  max-width: 600px;
+}
+
+/* Diagram Layout */
+.diagram {
+  position: relative;
+}
+.instructionBox {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-6);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  margin-bottom: var(--space-6);
+}
+.instructionLabel {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  font-family: var(--font-mono);
+}
+.connectorSvg {
+  width: 120px;
+  height: 60px;
+  margin-bottom: var(--space-4);
+}
+
+/* Three columns */
+.columnsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+.column {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  overflow: hidden;
+}
+.columnHeader {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border-light);
+  background: var(--color-bg);
+}
+.columnTitle {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+}
+.columnBody {
+  padding: var(--space-4) var(--space-3);
+  display: flex;
+  justify-content: center;
+}
+.internalSvg {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+}
+.columnDesc {
+  padding: var(--space-3) var(--space-5) var(--space-5);
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border-light);
+}
+
+@media (max-width: 768px) {
+  .columnsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+  .connectorSvg {
+    display: none;
+  }
+}

@@ -1,0 +1,421 @@
+/* ============================================================
+   DEVORA — IDENTIFIER RULES & VALIDATOR STYLES
+   4 Core Rules × Real-Time Interactive Lexical Validator
+   ============================================================ */
+
+.sectionWrapper {
+  width: 100%;
+  padding: 4.5rem 0 5rem;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border-light);
+  scroll-margin-top: 120px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding-inline: clamp(24px, 4vw, 64px);
+}
+
+/* Header */
+.header {
+  margin-bottom: 3rem;
+  max-width: 720px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.85rem;
+}
+
+.eyebrowIndex {
+  color: var(--color-text-primary);
+}
+
+.eyebrowDivider {
+  color: var(--color-border);
+}
+
+.mainHeading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 3.8vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--color-text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.subHeading {
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+/* 4 Rules Cards Grid */
+.rulesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 1080px) {
+  .rulesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .rulesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ruleCard {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.35rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ruleCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-text-secondary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.ruleHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.ruleNumberBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-text-primary);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.ruleTitle {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.ruleSummary {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.65rem;
+  line-height: 1.4;
+}
+
+.ruleExplanation {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.examplesTagList {
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 0.85rem;
+  margin-top: auto;
+}
+
+.validLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #10a37f;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.tagPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tagPillValid {
+  padding: 0.18rem 0.5rem;
+  background: #f4faf6;
+  border: 1px solid #d6ede0;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #10a37f;
+}
+
+/* Interactive Identifier Lab / Validator */
+.labCard {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 3.5rem;
+}
+
+.labHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.labTitle {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.labIcon {
+  color: #0055ff;
+}
+
+.labSubtitle {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  max-width: 650px;
+}
+
+/* Validator Input Row */
+.validatorInputWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.inputGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.identifierInput {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  padding-right: 140px;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  color: var(--color-text-primary);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.identifierInput:focus {
+  background: #ffffff;
+  border-color: #0055ff;
+  box-shadow: 0 0 0 3px rgba(0, 85, 255, 0.12);
+}
+
+.inputStatusBadge {
+  position: absolute;
+  right: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.statusValid {
+  background: #d6ede0;
+  color: #0d8264;
+}
+
+.statusInvalid {
+  background: #ffdcd4;
+  color: #c2410c;
+}
+
+/* Quick test chips */
+.testChipsRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.testChipsLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-right: 0.25rem;
+}
+
+.testChipBtn {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.testChipBtn:hover {
+  background: #ffffff;
+  border-color: var(--color-text-secondary);
+  transform: translateY(-1px);
+}
+
+/* Diagnostic Result Box */
+.diagnosticBox {
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.diagnosticValid {
+  background: #f4faf6;
+  border-color: #d6ede0;
+  color: #0d8264;
+}
+
+.diagnosticInvalid {
+  background: #fff8f6;
+  border-color: #ffdcd4;
+  color: #9a3412;
+}
+
+.diagText {
+  flex: 1;
+}
+
+/* Valid vs Invalid Comparison Table */
+.comparisonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .comparisonGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.comparisonCol {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.colHeaderValid {
+  padding: 0.85rem 1.25rem;
+  background: #f4faf6;
+  border-bottom: 1px solid #d6ede0;
+  color: #0d8264;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.colHeaderInvalid {
+  padding: 0.85rem 1.25rem;
+  background: #fff8f6;
+  border-bottom: 1px solid #ffdcd4;
+  color: #c2410c;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tableList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tableRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--color-border-light);
+  font-size: 0.88rem;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.codeIdentifier {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+}
+
+.codeIdValid {
+  background: #eef7f2;
+  color: #0d8264;
+}
+
+.codeIdInvalid {
+  background: #fef2f2;
+  color: #c2410c;
+}
+
+.codeReason {
+  color: var(--color-text-secondary);
+  font-size: 0.82rem;
+  text-align: right;
+}

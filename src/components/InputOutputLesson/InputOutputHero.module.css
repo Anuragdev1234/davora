@@ -1,0 +1,647 @@
+/* ============================================================
+   DEVORA — INPUT AND OUTPUT IN C HERO STYLES
+   Cinematic Editorial Hero with Central Code Editor & Terminals
+   ============================================================ */
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 840px;
+  background-color: #F6F5F1;
+  overflow: hidden;
+  padding: 2.5rem 0 3.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Background Terrain Layer (Recreating Reference Terrain) */
+.terrainBackground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 55%;
+  background-image: url('/images/structure_editorial_terrain.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0.9) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0.9) 100%);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1560px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 3.5vw, 48px);
+  z-index: 2;
+}
+
+/* Top Meta Eyebrow Bar */
+.metaHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+}
+
+@media (max-width: 640px) {
+  .metaHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.brandGroup {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.brandLogo {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #191b19;
+  text-transform: uppercase;
+}
+
+.brandSubtitle {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: #787b74;
+  text-transform: uppercase;
+}
+
+.lessonBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4a4e47;
+  backdrop-filter: blur(8px);
+}
+
+/* 3-Column Wide Desktop Grid */
+.heroStage {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(310px, 340px) minmax(460px, 1fr) minmax(320px, 360px);
+  gap: clamp(18px, 2.4vw, 32px);
+  align-items: start;
+}
+
+@media (max-width: 1280px) {
+  .heroStage {
+    grid-template-columns: 320px 1fr 320px;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .heroStage {
+    grid-template-columns: 1fr 1fr;
+  }
+  .rightColumn {
+    grid-column: span 2;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroStage {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .rightColumn {
+    grid-column: span 1;
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ============================================================
+   LEFT COLUMN: Editorial Heading, Concepts, User Input, Keyboard
+   ============================================================ */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  z-index: 4;
+}
+
+.headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 3.8vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #191b19;
+  margin: 0;
+}
+
+.titleLine {
+  display: block;
+}
+
+.leadDescription {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #4c5148;
+  margin: 0;
+}
+
+/* Concept Cards (Input / Output) */
+.conceptsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.conceptCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.conceptCard:hover {
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.conceptIconBadge {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #ffffff;
+  font-size: 0.85rem;
+}
+
+.conceptInputBadge {
+  background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%); /* Soft Coral / Rose */
+  box-shadow: 0 2px 8px rgba(225, 29, 72, 0.3);
+}
+
+.conceptOutputBadge {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%); /* Soft Emerald Green */
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+}
+
+.conceptContent {
+  flex: 1;
+}
+
+.conceptTitle {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #191b19;
+  margin: 0 0 2px 0;
+}
+
+.conceptSubtitle {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: #63685e;
+  margin: 0;
+}
+
+/* User Input Interactive Card */
+.userInputCard {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px 16px;
+  border: 1.5px solid #3b82f6;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.1);
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.userInputCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.userInputIconBadge {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.userInputTitle {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #191b19;
+  margin: 0;
+}
+
+.userInputSubtitle {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  color: #63685e;
+  margin: 0;
+}
+
+/* The actual text input control */
+.inputFieldWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 6px 12px;
+  transition: all 0.2s ease;
+}
+
+.inputFieldWrapper:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  background: #ffffff;
+}
+
+.inputField {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: 0.08em;
+}
+
+.inputField::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.quickPillValues {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.quickPillLabel {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.quickPillBtn {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 2px 7px;
+  border-radius: 6px;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.quickPillBtn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* ============================================================
+   CENTER COLUMN: Primary Dark C Code Editor
+   ============================================================ */
+.centerColumn {
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+}
+
+.codeEditorCard {
+  width: 100%;
+  background: #141614;
+  border: 1px solid #282c28;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  position: relative;
+}
+
+.editorTitleBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: #1a1d1a;
+  border-bottom: 1px solid #282c28;
+}
+
+.macControls {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.macDot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.macDotRed { background: #ff5f56; }
+.macDotAmber { background: #ffbd2e; }
+.macDotGreen { background: #27c93f; }
+
+.editorFileName {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #8c9088;
+  letter-spacing: 0.05em;
+}
+
+.codeBody {
+  padding: 18px 20px 22px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  background: #141614;
+  overflow-x: auto;
+}
+
+.codeLine {
+  display: flex;
+  align-items: baseline;
+  min-height: 1.8em;
+  white-space: pre;
+}
+
+.lineNum {
+  width: 32px;
+  color: #555a52;
+  user-select: none;
+  font-size: 0.78rem;
+  text-align: right;
+  padding-right: 18px;
+  flex-shrink: 0;
+}
+
+.codeText {
+  color: #d1d5db;
+}
+
+/* Syntax Highlighting Colors */
+.syntaxKeyword { color: #f43f5e; font-weight: 600; }
+.syntaxPreproc { color: #a78bfa; font-weight: 600; }
+.syntaxType { color: #38bdf8; }
+.syntaxString { color: #86efac; }
+.syntaxFunc { color: #fde047; }
+.syntaxNum { color: #fb923c; }
+.syntaxPunct { color: #94a3b8; }
+
+/* Interactive Pill Highlight Outlines */
+.pillHighlight {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 6px;
+  border: 1.5px solid transparent;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.pillPrompt {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.12);
+}
+
+.pillInput {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.14);
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.25);
+}
+
+.pillProcessing {
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.12);
+}
+
+.pillOutput {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.14);
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.25);
+}
+
+.pillActive {
+  box-shadow: 0 0 18px currentColor;
+  filter: brightness(1.15);
+}
+
+/* ============================================================
+   RIGHT COLUMN: Input Prompt & Program Output Terminals
+   ============================================================ */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 4;
+}
+
+/* Terminal Card Container */
+.terminalCard {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  padding: 14px 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.terminalCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+}
+
+.terminalCardActive {
+  border-color: currentColor;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.terminalCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.terminalIconBadge {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.promptIconBadge {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+}
+
+.outputIconBadge {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+}
+
+.terminalMeta {
+  flex: 1;
+}
+
+.terminalTitle {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #191b19;
+  margin: 0 0 2px 0;
+}
+
+.terminalSubtitle {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  color: #63685e;
+  margin: 0;
+}
+
+.terminalSubtitle code {
+  font-family: var(--font-mono);
+  background: rgba(0, 0, 0, 0.05);
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+/* Dark Terminal Surface */
+.terminalScreen {
+  background: #141614;
+  border: 1px solid #282c28;
+  border-radius: 10px;
+  padding: 10px 14px 14px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.terminalScreenHeader {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.terminalDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.terminalContent {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.terminalPromptLine {
+  color: #f8fafc;
+}
+
+.terminalValueEntered {
+  color: #60a5fa;
+  font-weight: 700;
+}
+
+.terminalResultLine {
+  color: #86efac;
+  font-weight: 700;
+}
+
+.terminalErrorLine {
+  color: #f87171;
+  font-weight: 600;
+}
+
+.cursorBlink {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background-color: #f8fafc;
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: blinkCursor 1s infinite steps(2, start);
+}
+
+@keyframes blinkCursor {
+  to { visibility: hidden; }
+}
+
+/* ============================================================
+   SVG CONNECTOR LINES LAYER
+   ============================================================ */
+.connectorsSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.connectorPath {
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke-width 0.25s ease, opacity 0.25s ease;
+}
+
+@media (max-width: 1080px) {
+  .connectorsSvg {
+    display: none;
+  }
+}

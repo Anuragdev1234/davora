@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DEVORA — Inside the Logic. Learn C programming through the logic, ideas, and mechanisms that make software work." />
+    <meta name="theme-color" content="#F5F5F1" />
+    <title>DEVORA — Inside the Logic</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      window.addEventListener('error', function(e) {
+        console.error('Captured window error:', e);
+        var errDiv = document.createElement('div');
+        errDiv.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:999999;background:#ffeeee;color:#cc0000;border-bottom:3px solid #cc0000;padding:24px;font-family:monospace;font-size:14px;white-space:pre-wrap;box-shadow:0 4px 20px rgba(0,0,0,0.2);';
+        errDiv.innerHTML = '<strong>RUNTIME ERROR:</strong> ' + e.message + '\n\n' + (e.error ? (e.error.stack || e.error) : '') + '\n\nAt: ' + e.filename + ':' + e.lineno + ':' + e.colno;
+        document.body.appendChild(errDiv);
+      });
+      window.addEventListener('unhandledrejection', function(e) {
+        console.error('Captured unhandledrejection:', e);
+        var errDiv = document.createElement('div');
+        errDiv.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:999999;background:#ffeeee;color:#cc0000;border-bottom:3px solid #cc0000;padding:24px;font-family:monospace;font-size:14px;white-space:pre-wrap;box-shadow:0 4px 20px rgba(0,0,0,0.2);';
+        errDiv.innerHTML = '<strong>UNHANDLED REJECTION:</strong> ' + (e.reason ? (e.reason.stack || e.reason) : 'Unknown promise rejection');
+        document.body.appendChild(errDiv);
+      });
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,296 @@
+/* ============================================================
+   DEVORA — INPUT & OUTPUT IN C IN-DEPTH ARTICLE STYLES
+   Editorial Manuscript with Streams Architecture & Code Panels
+   ============================================================ */
+
+.sectionWrapper {
+  width: 100%;
+  padding: 4.5rem 0 5rem;
+  background-color: #F6F5F1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  scroll-margin-top: 90px;
+}
+
+.sectionWrapperAlt {
+  background-color: #ffffff;
+}
+
+.container {
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 3.5vw, 56px);
+}
+
+/* Section Header Typography */
+.sectionHeader {
+  margin-bottom: 2.5rem;
+  max-width: 920px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #72766e;
+  margin-bottom: 0.85rem;
+}
+
+.eyebrowIndex {
+  color: #191b19;
+}
+
+.eyebrowDivider {
+  color: #c4c7be;
+}
+
+.mainHeading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.4vw, 2.9rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #191b19;
+  margin: 0 0 1rem 0;
+}
+
+.subHeading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 400;
+  color: #191b19;
+  margin: 2.5rem 0 1rem 0;
+  letter-spacing: -0.015em;
+}
+
+.bodyText {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #383c35;
+  margin-bottom: 1.25rem;
+  max-width: 900px;
+}
+
+.bodyText code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.88em;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  color: #191b19;
+}
+
+/* Streams Diagram Box */
+.streamsDiagramCard {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin: 2rem 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.streamFlowGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 18px;
+}
+
+@media (max-width: 768px) {
+  .streamFlowGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.streamCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.streamCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.streamName {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.streamTypePill {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 12px;
+}
+
+.streamDesc {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #475569;
+}
+
+/* Code with Terminal Output Duo */
+.codeAndOutputDuo {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 1fr);
+  gap: 20px;
+  margin: 1.75rem 0 2rem;
+  align-items: stretch;
+}
+
+@media (max-width: 960px) {
+  .codeAndOutputDuo {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Code Panel */
+.codePanel {
+  background: #141614;
+  border: 1px solid #282c28;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #1b1e1b;
+  border-bottom: 1px solid #282c28;
+}
+
+.fileName {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: #8c9088;
+  letter-spacing: 0.05em;
+}
+
+.copyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  background: transparent;
+  border: 1px solid #363b35;
+  color: #a4a99f;
+  padding: 3px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.copyBtn:hover {
+  background: #282c28;
+  color: #ffffff;
+}
+
+.codeContent {
+  padding: 16px 18px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #f1f5f9;
+  white-space: pre;
+  overflow-x: auto;
+  margin: 0;
+  flex: 1;
+}
+
+/* Terminal Output Panel */
+.terminalPanel {
+  background: #121412;
+  border: 1px solid #252824;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+.terminalHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #191b19;
+  border-bottom: 1px solid #252824;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #8c9088;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.terminalBody {
+  padding: 16px 18px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.86rem;
+  line-height: 1.7;
+  color: #86efac;
+  white-space: pre-wrap;
+  margin: 0;
+  flex: 1;
+}
+
+/* Callouts / Warnings */
+.calloutBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #ffffff;
+  border-left: 4px solid #2563eb;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  margin: 1.75rem 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.calloutWarning {
+  border-left-color: #ef4444;
+  background: #fffbfb;
+}
+
+.calloutSuccess {
+  border-left-color: #10b981;
+}
+
+.calloutIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.calloutText {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.calloutText strong {
+  color: #0f172a;
+}

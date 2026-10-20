@@ -1,0 +1,528 @@
+/* ============================================================
+   DEVORA — EXECUTION SIMULATOR STYLES
+   Trustworthy Conceptual Execution Timeline & Memory Scope
+   ============================================================ */
+
+.sectionWrapper {
+  width: 100%;
+  padding: 4.5rem 0 5rem;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border-light);
+  scroll-margin-top: 120px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding-inline: clamp(24px, 4vw, 64px);
+}
+
+/* Header */
+.header {
+  margin-bottom: 3rem;
+  max-width: 680px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.85rem;
+}
+
+.eyebrowIndex {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.eyebrowDivider {
+  color: var(--color-text-muted);
+}
+
+.mainHeading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--color-text);
+  margin-bottom: 0.65rem;
+}
+
+.subHeading {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+/* Simulator Grid */
+.simGrid {
+  display: grid;
+  grid-template-columns: minmax(380px, 1fr) 1.35fr;
+  gap: clamp(2rem, 3.5vw, 3.5rem);
+  align-items: start;
+}
+
+/* Timeline Column */
+.timelineCol {
+  width: 100%;
+}
+
+.timelineCard {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.07),
+              0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.timelineHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.35rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.cpuIcon {
+  color: #2563EB;
+}
+
+.stepsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepRow {
+  display: flex;
+  gap: 1.25rem;
+  cursor: pointer;
+  padding: 0.65rem 0.75rem;
+  border-radius: 12px;
+  transition: background-color var(--duration-fast) ease;
+}
+
+.stepRow:hover {
+  background-color: rgba(37, 99, 235, 0.035);
+}
+
+.stepRowActive {
+  background-color: rgba(37, 99, 235, 0.07) !important;
+}
+
+.nodeColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 28px;
+}
+
+.nodeCircle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border);
+  background-color: #FFFFFF;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  transition: all var(--duration-fast) ease;
+}
+
+.nodeActive {
+  background-color: #2563EB !important;
+  border-color: #2563EB !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.nodeDone {
+  background-color: #059669;
+  border-color: #059669;
+  color: #FFFFFF;
+}
+
+.doneCheck {
+  display: block;
+}
+
+.connectingLine {
+  width: 2px;
+  height: 38px;
+  background-color: var(--color-border-light);
+  margin: 3px 0;
+  transition: background-color var(--duration-fast) ease;
+}
+
+.lineDone {
+  background-color: #059669;
+}
+
+.stepInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 0.25rem;
+}
+
+.stepCode {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.2rem;
+}
+
+.stepTitleLabel {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+}
+
+/* Inspector Column */
+.inspectorCol {
+  width: 100%;
+}
+
+.inspectorCard {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 1.85rem 2rem;
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.07),
+              0 2px 6px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.inspectorTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.stepCounterBadge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.instructionBadge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-full);
+  background-color: rgba(37, 99, 235, 0.08);
+  color: #2563EB;
+}
+
+.inspectorTitle {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.2;
+  margin-bottom: 0.65rem;
+}
+
+.inspectorDesc {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.65rem;
+}
+
+/* Conceptual Memory Watch Widget */
+.variableWatch {
+  background-color: #F8F9FA;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 14px;
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 1.85rem;
+}
+
+.watchHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.watchHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+}
+
+.memoryIcon {
+  color: #2563EB;
+}
+
+.statusPill {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
+.statusPillActive {
+  background-color: rgba(37, 99, 235, 0.1);
+  color: #2563EB;
+}
+
+.statusPillPending {
+  background-color: #E2E8F0;
+  color: #64748B;
+}
+
+.watchGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.15rem 1.4rem;
+}
+
+.watchItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.watchLabel {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.watchValIdentifier {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1A1A1A;
+}
+
+.watchVal {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--color-text);
+}
+
+.watchValBig {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: color var(--duration-fast) ease;
+}
+
+.valHighlighted {
+  color: #2563EB !important;
+}
+
+.valMuted {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  font-size: 0.92rem;
+}
+
+.watchValStatus {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+/* Console Output Callout inside Watch */
+.simTerminalOutput {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.simTerminalLabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+
+.simTerminalCode {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #059669;
+  background-color: rgba(5, 150, 105, 0.08);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Control Bar */
+.controlBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.controlLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.resetBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background-color: #F1F3F5;
+  transition: all var(--duration-fast) ease;
+  cursor: pointer;
+}
+
+.resetBtn:hover {
+  background-color: #E9ECEF;
+  color: var(--color-text);
+}
+
+.playBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background-color: #F1F3F5;
+  transition: all var(--duration-fast) ease;
+  cursor: pointer;
+}
+
+.playBtn:hover {
+  background-color: #E9ECEF;
+}
+
+.playBtnActive {
+  background-color: #2563EB !important;
+  color: #FFFFFF !important;
+}
+
+.controlRight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.stepBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background-color: #F3F4F6;
+  transition: all var(--duration-fast) ease;
+  cursor: pointer;
+}
+
+.stepBtn:hover:not(:disabled) {
+  background-color: #E5E7EB;
+}
+
+.stepBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.stepBtnPrimary {
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+}
+
+.stepBtnPrimary:hover:not(:disabled) {
+  background-color: #000000;
+  transform: translateX(2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .simGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .sectionWrapper {
+    padding: 3.5rem 0;
+  }
+  .mainHeading {
+    font-size: 2.1rem;
+  }
+  .inspectorCard {
+    padding: 1.35rem;
+  }
+  .watchGrid {
+    grid-template-columns: 1fr;
+    gap: 0.95rem;
+  }
+  .controlBar {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  .controlLeft, .controlRight {
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,145 @@
+/* ============================================================
+   DEVORA — INTERACTIVE KEYBOARD COMPONENT STYLES
+   Realistic 3D Low-Profile Mechanical Keyboard Illustration
+   ============================================================ */
+
+.keyboardWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin: 14px auto 0;
+  perspective: 900px;
+  transform-style: preserve-3d;
+  user-select: none;
+}
+
+.keyboardChassis {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(145deg, #e4e6df 0%, #cbcdc5 60%, #b8bab1 100%);
+  border-radius: 14px;
+  padding: 8px 10px 12px;
+  box-shadow: 
+    0 16px 32px rgba(35, 40, 35, 0.16),
+    0 6px 12px rgba(35, 40, 35, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.15);
+  transform: rotateX(24deg) rotateY(-8deg) rotateZ(-4deg);
+  transform-origin: center bottom;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.keyboardWrapper:hover .keyboardChassis {
+  transform: rotateX(20deg) rotateY(-5deg) rotateZ(-2deg) translateY(-2px);
+  box-shadow: 
+    0 22px 40px rgba(35, 40, 35, 0.22),
+    0 8px 16px rgba(35, 40, 35, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+/* Keyboard status indicator light */
+.statusLed {
+  position: absolute;
+  top: 5px;
+  right: 12px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.8);
+  animation: pulseLed 3s infinite ease-in-out;
+}
+
+@keyframes pulseLed {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); box-shadow: 0 0 8px rgba(34, 197, 94, 1); }
+}
+
+/* Rows container */
+.keyGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5px;
+  margin-top: 2px;
+}
+
+.keyRow {
+  display: flex;
+  gap: 3px;
+  justify-content: space-between;
+}
+
+/* Individual Keycap */
+.keycap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  min-width: 17px;
+  flex: 1;
+  background: linear-gradient(180deg, #fbfbf9 0%, #e6e8e2 85%, #d1d4cb 100%);
+  border-radius: 3px;
+  box-shadow: 
+    0 2px 0 #b3b7ad,
+    0 3px 2px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.52rem;
+  font-weight: 700;
+  color: #3f443b;
+  text-transform: uppercase;
+  transition: all 0.12s ease;
+  cursor: pointer;
+  padding: 0 2px;
+}
+
+.keycap:hover {
+  background: #ffffff;
+  color: #191b19;
+}
+
+/* Active Highlight Key (when typed) */
+.keycapActive {
+  background: linear-gradient(180deg, #3b82f6 0%, #2563eb 85%, #1d4ed8 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 
+    0 1px 0 #1e40af,
+    0 0 10px rgba(37, 99, 235, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+  transform: translateY(1px);
+}
+
+/* Keycap special widths */
+.keyTab { flex: 1.5; }
+.keyCaps { flex: 1.7; }
+.keyShift { flex: 2; }
+.keyEnter { 
+  flex: 2;
+  background: linear-gradient(180deg, #e1e7dc 0%, #cbd4c3 85%, #b5c0ab 100%);
+}
+.keySpace { 
+  flex: 5.5; 
+  height: 18px;
+}
+.keyModifier {
+  flex: 1.25;
+  font-size: 0.46rem;
+}
+.keyArrow {
+  flex: 0.9;
+  font-size: 0.44rem;
+}
+
+/* Contact shadow underneath */
+.contactShadow {
+  position: absolute;
+  bottom: -10px;
+  left: 8%;
+  right: 8%;
+  height: 18px;
+  background: radial-gradient(ellipse at center, rgba(30, 35, 25, 0.22) 0%, rgba(30, 35, 25, 0) 70%);
+  filter: blur(5px);
+  pointer-events: none;
+}

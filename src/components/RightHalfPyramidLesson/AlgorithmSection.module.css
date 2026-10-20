@@ -1,0 +1,247 @@
+.section {
+  padding: 5rem 2rem;
+  background-color: var(--color-bg, #fcfcfc);
+  border-bottom: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.06));
+  scroll-margin-top: 5.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  margin-bottom: 3.5rem;
+}
+
+.sectionNumber {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-blue, #2563eb);
+  margin-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif, "Newsreader", Georgia, serif);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 400;
+  color: var(--color-text-primary, #111111);
+  margin-bottom: 0.75rem;
+}
+
+.sectionDesc {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #555555);
+  max-width: 650px;
+}
+
+/* 3-Part Transformation Strip */
+.comparisonStrip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.comparisonCard {
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.08));
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.comparisonRole {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #71717a;
+}
+
+.comparisonQuote {
+  font-family: var(--font-serif, "Newsreader", Georgia, serif);
+  font-size: 1.15rem;
+  line-height: 1.45;
+  color: #18181b;
+}
+
+.comparisonDetails {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #52525b;
+}
+
+/* Mini Loop Diagram */
+.miniLoopBox {
+  margin-top: 0.5rem;
+  background: #18181b;
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+/* Main Algorithm Table & Step Details */
+.algorithmWorkspace {
+  display: grid;
+  grid-template-columns: 58% 42%;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.stepsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.stepItem {
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.08));
+  border-radius: 8px;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.stepItem:hover {
+  border-color: rgba(37, 99, 235, 0.25);
+  transform: translateX(2px);
+}
+
+.stepItemActive {
+  background: #ffffff;
+  border-color: rgba(37, 99, 235, 0.3);
+  border-left: 3px solid var(--color-accent-blue, #2563eb);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.06);
+}
+
+.stepNumber {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f4f4f5;
+  color: #52525b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stepItemActive .stepNumber {
+  background: var(--color-accent-blue, #2563eb);
+  color: #ffffff;
+}
+
+.stepText {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1f2937;
+  flex: 1;
+}
+
+.stepTag {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #71717a;
+  background: #f4f4f5;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Step Detail Explanation Card */
+.stepDetailCard {
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle, rgba(0, 0, 0, 0.08));
+  border-radius: var(--radius-lg, 12px);
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: sticky;
+  top: 6rem;
+}
+
+.detailHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding-bottom: 0.75rem;
+}
+
+.detailBadge {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: var(--color-accent-blue, #2563eb);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+.detailTitle {
+  font-family: var(--font-serif, "Newsreader", Georgia, serif);
+  font-size: 1.35rem;
+  color: #111827;
+}
+
+.detailDesc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.detailCodeSnippet {
+  background: #18181b;
+  color: #c5e97b;
+  padding: 0.85rem 1rem;
+  border-radius: 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .comparisonStrip {
+    grid-template-columns: 1fr;
+  }
+
+  .algorithmWorkspace {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .stepDetailCard {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .comparisonCard,
+  .stepDetailCard {
+    padding: 1.5rem 1.25rem;
+  }
+}
