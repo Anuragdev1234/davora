@@ -66,6 +66,8 @@ export function TheoryNavbar({ onSelectLesson }: TheoryNavbarProps) {
       navigate('/theory/how-a-c-program-works');
     } else if (lesson.id === 'structure-c' || lesson.slug.includes('structure-of-a-c-program')) {
       navigate('/theory/structure-of-a-c-program');
+    } else if (lesson.id === 'practice-problems' || lesson.slug.includes('practice-problems')) {
+      navigate('/curriculum/basics/practice-problems');
     } else if (onSelectLesson) {
       onSelectLesson(lesson);
     }

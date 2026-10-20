@@ -43,6 +43,8 @@ export function CurriculumAccordion({ onSelectLesson }: CurriculumAccordionProps
       navigate('/theory/basics/functions');
     } else if (lesson.id === 'recursion' || lesson.slug.includes('recursion')) {
       navigate('/theory/basics/recursion');
+    } else if (lesson.id === 'practice-problems' || lesson.slug.includes('practice-problems')) {
+      navigate('/curriculum/basics/practice-problems');
     } else if (onSelectLesson) {
       onSelectLesson(lesson);
     }

@@ -1,0 +1,329 @@
+.workspaceSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ── Mode Navigation Tabs ── */
+.modeTabsContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.modeTabsList {
+  display: inline-flex;
+  background: #edeae2;
+  border: 1px solid rgba(28, 25, 23, 0.1);
+  padding: 0.35rem;
+  border-radius: 9999px;
+  gap: 0.25rem;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.modeTabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  color: #57534e;
+  font-family: var(--font-sans, -apple-system, sans-serif);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modeTabBtn:hover {
+  color: #1c1917;
+}
+
+.modeTabActive {
+  background: #ffffff;
+  color: #1c1917;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.tabIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabBadge {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  background: rgba(28, 25, 23, 0.08);
+  padding: 0.1rem 0.45rem;
+  border-radius: 9999px;
+  color: #57534e;
+}
+
+.modeTabActive .tabBadge {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* ── Filter Bar & Controls ── */
+.filterBar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background: #ffffff;
+  border: 1px solid rgba(28, 25, 23, 0.08);
+  border-radius: 18px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.03);
+}
+
+.filterTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #fdfaf6;
+  border: 1px solid rgba(28, 25, 23, 0.12);
+  border-radius: 9999px;
+  padding: 0.55rem 1rem;
+  flex: 1;
+  min-width: 240px;
+  max-width: 480px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.searchWrapper:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.searchIcon {
+  color: #78716c;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.88rem;
+  color: #1c1917;
+}
+
+.searchInput::placeholder {
+  color: #a8a29e;
+}
+
+.clearSearchBtn {
+  background: none;
+  border: none;
+  color: #a8a29e;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.clearSearchBtn:hover {
+  color: #1c1917;
+}
+
+.filterActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.diffSelect {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #44403c;
+  background: #fdfaf6;
+  border: 1px solid rgba(28, 25, 23, 0.12);
+  border-radius: 9999px;
+  padding: 0.55rem 1.15rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.diffSelect:focus {
+  border-color: #2563eb;
+}
+
+.resetBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid rgba(28, 25, 23, 0.12);
+  color: #78716c;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.55rem 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.resetBtn:hover {
+  background: #f5f5f1;
+  color: #1c1917;
+  border-color: rgba(28, 25, 23, 0.2);
+}
+
+/* ── Category Pills Row ── */
+.categoriesRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  scrollbar-width: thin;
+}
+
+.categoryPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(28, 25, 23, 0.1);
+  background: #fdfaf6;
+  color: #57534e;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.categoryPill:hover {
+  background: #f5f5f1;
+  color: #1c1917;
+  border-color: rgba(28, 25, 23, 0.2);
+}
+
+.categoryPillActive {
+  background: #1c1917;
+  color: #ffffff;
+  border-color: #1c1917;
+}
+
+.categoryPillActive:hover {
+  background: #1c1917;
+  color: #ffffff;
+}
+
+/* ── Results Info Bar ── */
+.resultsMetaBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  color: #78716c;
+}
+
+.countHighlight {
+  font-weight: 700;
+  color: #1c1917;
+}
+
+/* ── Empty State ── */
+.emptyState {
+  background: #ffffff;
+  border: 1px dashed rgba(28, 25, 23, 0.18);
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.emptyIcon {
+  color: #a8a29e;
+  margin-bottom: 0.5rem;
+}
+
+.emptyTitle {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #1c1917;
+  margin: 0;
+}
+
+.emptyText {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.92rem;
+  color: #78716c;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.emptyResetBtn {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #1c1917;
+  color: #ffffff;
+  border: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: 9999px;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.emptyResetBtn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .filterTopRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchWrapper {
+    max-width: 100%;
+  }
+
+  .filterActions {
+    justify-content: space-between;
+  }
+}

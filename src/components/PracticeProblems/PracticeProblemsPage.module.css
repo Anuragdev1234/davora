@@ -1,0 +1,7 @@
+.pageInner {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--color-bg, #f6f5f1);
+  min-height: 100vh;
+}

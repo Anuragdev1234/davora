@@ -27,6 +27,24 @@ export function TheoryPage() {
       navigate('/theory/how-a-c-program-works');
     } else if (lesson.id === 'structure-c' || lesson.slug.includes('structure-of-a-c-program')) {
       navigate('/theory/structure-of-a-c-program');
+    } else if (lesson.id === 'tokens-keywords' || lesson.slug.includes('tokens-keywords')) {
+      navigate('/theory/basics/tokens-keywords-identifiers');
+    } else if (lesson.id === 'variables-datatypes' || lesson.slug.includes('variables-and-data-types')) {
+      navigate('/theory/basics/variables-and-data-types');
+    } else if (lesson.id === 'operators' || lesson.slug.includes('operators-in-c') || lesson.slug.includes('operators')) {
+      navigate('/theory/basics/operators-in-c');
+    } else if (lesson.id === 'input-output' || lesson.slug.includes('input-and-output') || lesson.slug.includes('input-output')) {
+      navigate('/theory/basics/input-and-output');
+    } else if (lesson.id === 'conditional-statements' || lesson.slug.includes('conditional-statements') || lesson.slug.includes('conditionals')) {
+      navigate('/theory/basics/conditional-statements');
+    } else if (lesson.id === 'loops' || lesson.slug.includes('loops-in-c') || lesson.slug.includes('loops')) {
+      navigate('/theory/basics/loops-in-c');
+    } else if (lesson.id === 'functions' || lesson.slug.includes('functions')) {
+      navigate('/theory/basics/functions');
+    } else if (lesson.id === 'recursion' || lesson.slug.includes('recursion')) {
+      navigate('/theory/basics/recursion');
+    } else if (lesson.id === 'practice-problems' || lesson.slug.includes('practice-problems')) {
+      navigate('/curriculum/basics/practice-problems');
     } else {
       setSelectedLesson(lesson);
     }

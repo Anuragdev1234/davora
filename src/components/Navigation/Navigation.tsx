@@ -67,7 +67,7 @@ export function Navigation({ onReplayIntro }: NavigationProps = {}) {
   const isLinkActive = (link: (typeof NAV_LINKS)[0]) => {
     if (!link.isRoute) return false;
     if (link.target === '/programs' && location.pathname.startsWith('/programs')) return true;
-    if (link.target === '/theory' && location.pathname.startsWith('/theory')) return true;
+    if (link.target === '/theory' && (location.pathname.startsWith('/theory') || location.pathname.startsWith('/curriculum'))) return true;
     return location.pathname === link.target;
   };
 

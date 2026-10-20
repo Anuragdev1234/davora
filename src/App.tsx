@@ -24,6 +24,7 @@ import { ConditionalLessonPage } from './components/ConditionalLesson/Conditiona
 import { LoopsLessonPage } from './components/LoopsLesson/LoopsLessonPage';
 import { FunctionsLessonPage } from './components/FunctionsLesson/FunctionsLessonPage';
 import { RecursionLessonPage } from './components/RecursionLesson/RecursionLessonPage';
+import { PracticeProblemsPage } from './components/PracticeProblems/PracticeProblemsPage';
 import { ProgramsLibraryPage } from './components/Programs/ProgramsLibraryPage';
 import { ProgramDetailPage } from './components/Programs/ProgramDetailPage';
 import { RightHalfPyramidLessonPage } from './components/RightHalfPyramidLesson/RightHalfPyramidLessonPage';
@@ -166,6 +167,10 @@ function App() {
         <Route path="/theory/basics/recursion" element={<RecursionLessonPage />} />
         <Route path="/theory/recursion-in-c" element={<RecursionLessonPage />} />
         <Route path="/theory/basics/recursion-in-c" element={<RecursionLessonPage />} />
+        <Route path="/curriculum/basics/practice-problems" element={<PracticeProblemsPage />} />
+        <Route path="/theory/basics/practice-problems" element={<PracticeProblemsPage />} />
+        <Route path="/curriculum/practice-problems" element={<PracticeProblemsPage />} />
+        <Route path="/theory/practice-problems" element={<PracticeProblemsPage />} />
         <Route path="/programs" element={<ProgramsLibraryPage />} />
         <Route path="/programs/patterns/right-half-pyramid" element={<RightHalfPyramidLessonPage />} />
         <Route path="/programs/patterns/right-half-pyramid-star" element={<RightHalfPyramidLessonPage />} />
